@@ -1,0 +1,37 @@
+inner double dGlobal <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+# Errores de expresiones
+######################################
+
+perception perception1()
+{
+	true;
+}
+
+action action1()
+{
+		
+}
+
+perception perception2(int a,double b)
+{
+	true;
+}
+
+action action2(int a,double b)
+{
+		
+}
+
+
+
+######################################
+rules {  
+( perception1() & perception2(2,3) | dGlobal >3 ) -> action3(), action2(2,3,true); # ERROR. No existen los action.
+( action1() ) -> action1();		# ERROR. La condicion no devuelve un boolean.
+( 2 + 3 ) -> action2(1,2.0);	# ERROR. La condicion no es de tipo boolean.
+
+}

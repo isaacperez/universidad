@@ -1,0 +1,80 @@
+inner double dGlobal <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+#Asignaciones a variables no declaradas
+######################################
+perception prueba()
+{
+	a <- 2;
+	b <- true;
+	c<- 0.2;
+	true;
+}
+action prueba()
+{
+	a <- 2;
+	b <- true;
+	c<- 0.2;
+}
+
+
+######################################
+#Concordancias de tipos
+######################################
+perception prueba3()
+{
+	int a;
+	double b;
+	boolean c;
+	
+	a <- 2.0;
+	b <- true;
+	c <- 0;
+	
+	true;
+}
+action prueba3()
+{
+	int a;
+	double b;
+	boolean c;
+	
+	a <- 2.0;
+	b <- true;
+	c <- 0;
+	
+	# Variables inner
+	dGlobal <- false;
+	iGlobal <- 2.0;
+	bGlobal <- 3;
+	
+	# Variables Outputs
+	gear <- 2.0;
+	steering <-true;
+	brake <- false;
+
+}
+
+######################################
+#Asignaciones a variables inner (Error en perception)
+######################################
+action prueba2()
+{
+	dGlobal <- 3;
+	iGlobal <- 1;
+	bGlobal <- false;
+}
+
+perception prueba2()
+{
+	dGlobal <- 3;
+	iGlobal <- 1;
+	bGlobal <- false;
+	true;
+}
+
+######################################
+rules {  
+}

@@ -1,0 +1,39 @@
+inner double dGloba <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+#Deteccion de perception duplicados
+######################################
+perception prueba()
+{
+  true;
+}
+perception prueba()
+{
+  true;
+}
+
+######################################
+#Sobrecarga de perception
+######################################
+perception prueba(int a)
+{
+  true;
+}
+perception prueba(double a)
+{
+  true;
+}
+
+######################################
+#Deteccion de argumentos duplicados
+######################################
+perception prueba(boolean a,int a)
+{
+  true;
+}
+
+######################################
+rules {  
+}

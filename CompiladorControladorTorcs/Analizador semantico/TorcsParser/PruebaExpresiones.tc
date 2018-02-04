@@ -1,0 +1,58 @@
+inner double dGlobal <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+# Errores de expresiones
+######################################
+action prueba()
+{
+	
+}
+
+perception prueba()
+{
+	if(prueba()) # Condicion con llamada a funcion de tipo void
+	{
+		
+	}
+	else
+	{
+		
+	}
+	
+	true;
+}
+
+action prueba2()
+{
+	int a;
+	while(a) # Tiene que ser de tipo boolean
+	{
+	}
+
+	if(4 | 2) # Tienen que ser de tipo boolean
+	{
+		
+	}
+	else
+	{
+		
+	}
+		
+}
+
+perception prueba3()
+{
+
+	double a <- 2.0 + 1; # Correcto
+	double c <- (2.1 + 3.5) / 2; # Genera los parentesis
+	int e <- prueba() + 2; # ERROR de tipo.
+	int o <- 3 > true; # ERROR de tipo.
+	
+	true;
+}
+
+######################################
+rules {  
+}

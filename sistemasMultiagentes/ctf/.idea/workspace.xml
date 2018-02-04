@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8befe79f-f2fc-4b5b-9f47-3f56d1637ba7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anexo/AutomataAtaque.gliffy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anexo/AutomataAtaque.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anexo/AutomataDefensa.gliffy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anexo/AutomataDefensa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anexo/DescripcionAutomataDefensa.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anexo/cosas.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Anotaciones.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/EGuardiola_poster_cientifico.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/beamerposter.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/beamerthemeI6pd2.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.nav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.snm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.synctex.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/conference_poster_2.toc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/COLOR_POSITIVO.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/CTF.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/KPsq6TP-.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/art_84452.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/art_84452.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/logo1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/Carpeta nueva/logoUHU1.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/fipa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/jade.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/logo2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/logo2.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/logo5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/placeholder.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/figures/slide_11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/sample.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Poster/conference_poster_2/tangocolors.sty" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/APDescription.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/MTPs-Main-Container.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/Monitor_2015.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/Servidor_2016.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/jade.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/blanco.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa00.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa3.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa4.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa5.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa6.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapa7.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/mapagrande.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/pacman.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/prueba.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/mapas/rarito.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor_blanco.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor_blanco.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor_mapa2.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor_mapagrande.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/Servidor_2016/servidor_pacman.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._.DS_Store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._jade.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor_blanco.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor_blanco.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor_mapa2.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor_mapagrande.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/._servidor_pacman.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/mapas/._.DS_Store" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/mapas/._blanco.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/mapas/._mapa0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/mapas/._mapa2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/mapas/._mapagrande.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Servidor_2016/__MACOSX/Servidor_2016/mapas/._rarito.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Sesion_04.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TO_DO.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Untitleddocument.pdf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sesion4/Agentes/AgenteCreador.class" afterPath="$PROJECT_DIR$/out/production/Sesion4/Agentes/AgenteCreador.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sesion4/Comportamientos/Actuar.class" afterPath="$PROJECT_DIR$/out/production/Sesion4/Comportamientos/Actuar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sesion4/Comportamientos/NegociarEntrada.class" afterPath="$PROJECT_DIR$/out/production/Sesion4/Comportamientos/NegociarEntrada.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sesion4/Recursos/EstrategiaDefensiva.class" afterPath="$PROJECT_DIR$/out/production/Sesion4/Recursos/EstrategiaDefensiva.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jade.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jade.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" afterPath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_17.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_7_21.xml" afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_api_1_7_21.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/slf4j_log4j12_1_7_21.xml" afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_log4j12_1_7_21.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/salida.log" afterPath="$PROJECT_DIR$/log/salida.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/salida.log.1" afterPath="$PROJECT_DIR$/log/salida.log.1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/salida.log.2" afterPath="$PROJECT_DIR$/log/salida.log.2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/salida.log.3" afterPath="$PROJECT_DIR$/log/salida.log.3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/salida.log.4" afterPath="$PROJECT_DIR$/log/salida.log.4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log/salida.log.5" afterPath="$PROJECT_DIR$/log/salida.log.5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sesion4/log4j.xml" afterPath="$PROJECT_DIR$/out/production/Sesion4/log4j.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Agentes/AgenteCreador.java" afterPath="$PROJECT_DIR$/src/Agentes/AgenteCreador.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Comportamientos/Actuar.java" afterPath="$PROJECT_DIR$/src/Comportamientos/Actuar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java" afterPath="$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Recursos/EstrategiaDefensiva.java" afterPath="$PROJECT_DIR$/src/Recursos/EstrategiaDefensiva.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.xml" afterPath="$PROJECT_DIR$/src/log4j.xml" />
+    </list>
+    <ignored path="Sesion4.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Sesion4" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="A_Estrella.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Recursos/A_Estrella.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2260">
+              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CONSTANTES.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Recursos/CONSTANTES.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnviarMensajes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comportamientos/EnviarMensajes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstrategiaAtaque.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Recursos/EstrategiaAtaque.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3900">
+              <caret line="201" column="23" selection-start-line="201" selection-start-column="23" selection-end-line="201" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstrategiaDefensiva.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Recursos/EstrategiaDefensiva.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1760">
+              <caret line="96" column="26" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mapa.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Recursos/Mapa.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+              <folding>
+                <element signature="method#obtenerDescripcion#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosElemento#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getMapaObstaculos#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getMapaBase#0;class#Mapa#0" expanded="false" />
+                <element signature="method#addNuevasPosiciones#0;class#Mapa#0" expanded="false" />
+                <element signature="method#toString#0;class#Mapa#0" expanded="false" />
+                <element signature="method#buscarPosicionDondeDefender#0;class#Mapa#0" expanded="false" />
+                <element signature="method#mejorCasillaDefensivaVecinos#0;class#Mapa#0" expanded="false" />
+                <element signature="method#mejorCasillaEntornoDefensa#0;class#Mapa#0" expanded="false" />
+                <element signature="method#estaCasillaPasaPortadorBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+                <element signature="method#esAccesible#0;class#Mapa#0" expanded="false" />
+                <element signature="method#calcularHeuristicaDefensiva#0;class#Mapa#0" expanded="false" />
+                <element signature="method#estoyEnElEntornoDeDefensa#0;class#Mapa#0" expanded="false" />
+                <element signature="method#estaEnElEntornoDeDefensa#0;class#Mapa#0" expanded="false" />
+                <element signature="method#calcularDistancia#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosSalidaEnemigo#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosMiBase#0;class#Mapa#0" expanded="false" />
+                <element signature="method#quienVaPor#0;class#Mapa#0" expanded="false" />
+                <element signature="method#esDefensa#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getAtacantesEnEntornoDefensivoYCercaDeMi#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosMiBandera#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosVecinasYmia#0;class#Mapa#0" expanded="false" />
+                <element signature="method#atacanteConMiBandera#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosBaseEnemiga#0;class#Mapa#0" expanded="false" />
+                <element signature="method#defensorContestaSuPosicion#0;class#Mapa#0" expanded="false" />
+                <element signature="method#puedoResponderAlServidor#0;class#Mapa#0" expanded="false" />
+                <element signature="method#prepararseParaRecibirPosDefensivas#0;class#Mapa#0" expanded="false" />
+                <element signature="method#banderaEnemigaEnMiBase#0;class#Mapa#0" expanded="false" />
+                <element signature="method#miEquipoTieneBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+                <element signature="method#enemigoEnMiCaminoBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosAccesibleBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+                <element signature="method#esquivarEnemigoEnMiCamino#0;class#Mapa#0" expanded="false" />
+                <element signature="method#haTerminadoElJuego#0;class#Mapa#0" expanded="false" />
+                <element signature="method#respuestaEscolta#0;class#Mapa#0" expanded="false" />
+                <element signature="method#esquivarEnemigoEnMiCaminoConEscolta#0;class#Mapa#0" expanded="false" />
+                <element signature="method#estoyEnZonaDefensiva#0;class#Mapa#0" expanded="false" />
+                <element signature="method#damePosZonaDefensivaEscolta#0;class#Mapa#0" expanded="false" />
+                <element signature="method#darPosicionEscolta#0;class#Mapa#0" expanded="false" />
+                <element signature="method#getPosPasaPortador#0;class#Mapa#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NegociarEntrada.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="780">
+              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Nodo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Recursos/Nodo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1240">
+              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pensar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comportamientos/Pensar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecibirMensajes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Comportamientos/RecibirMensajes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Agente.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/BuscarServicio.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/Movimiento.java" />
+        <option value="$PROJECT_DIR$/../Anexos/jade.jar!/jade/lang/acl/ACLMessage.class" />
+        <option value="$PROJECT_DIR$/src/Recursos/Automata.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/Estrategia.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/EnviarMensajes.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/RecibirMensajes.java" />
+        <option value="$PROJECT_DIR$/src/Agentes/AgenteAtacante.java" />
+        <option value="$PROJECT_DIR$/src/Agentes/AgenteDefensor.java" />
+        <option value="$PROJECT_DIR$/TO_DO.txt" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/Pensar.java" />
+        <option value="$PROJECT_DIR$/src/Agentes/Agente.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/A_Estrella.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/Nodo.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/Mapa.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/EstrategiaAtaque.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/Actuar.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/EstrategiaDefensiva.java" />
+        <option value="$PROJECT_DIR$/src/log4j.xml" />
+        <option value="$PROJECT_DIR$/src/Agentes/AgenteCreador.java" />
+        <option value="$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java" />
+        <option value="$PROJECT_DIR$/src/Recursos/CONSTANTES.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="width" value="1368" />
+    <option name="height" value="736" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sesion4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sesion4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaCTF_IsaacPérezBorrero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sesion4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaCTF_IsaacPérezBorrero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sesion4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaCTF_IsaacPérezBorrero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Recursos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sesion4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaCTF_IsaacPérezBorrero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Comportamientos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Sesion4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PracticaCTF_IsaacPérezBorrero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Agentes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Recursos" />
+      <recent name="Comportamientos" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Agentes" />
+      <recent name="Recursos" />
+      <recent name="Comportamientos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Agentes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.LanzadorCreador">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Lanzador1" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-gui -agents pepe:Agentes.Agente" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Lanzador2" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaac:Agentes.Agente" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzadorCreador" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -host 172.17.21.148 -agents isaacCreador:Agentes.AgenteCreador" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzadorCreadorP2" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -host localhost -agents isaacCreadorP2:Agentes.AgenteCreador" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzadorCreadorP1" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -host localhost -agents isaacCreadorP1:Agentes.AgenteCreador" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzadorCreador Internet" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -host 172.17.99.39 -agents isaacCreador:Agentes.AgenteCreador" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarAtacante1" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacAtacante1:Agentes.AgenteAtacante" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarAtacante2" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacAtacante2:Agentes.AgenteAtacante" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarAtacante3" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacAtacante3:Agentes.AgenteAtacante" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor1" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor1:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor2" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor2:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor3" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor3:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor4" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor4:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor5" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor5:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor6" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor6:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor7" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor7:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor8" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor8:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="LanzarDefensor9" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -agents isaacDefensor9:Agentes.AgenteDefensor" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Lanzador3" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -host 172.17.21.82 -agents isaac:Agentes.Agente" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Lanzador4" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="jade.Boot" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="-container -host 172.17.21.108 -agents isaac:Agentes.Agente" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Sesion4" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="20">
+      <item index="0" class="java.lang.String" itemvalue="Application.Lanzador1" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Lanzador2" />
+      <item index="2" class="java.lang.String" itemvalue="Application.LanzadorCreador" />
+      <item index="3" class="java.lang.String" itemvalue="Application.LanzadorCreadorP2" />
+      <item index="4" class="java.lang.String" itemvalue="Application.LanzadorCreadorP1" />
+      <item index="5" class="java.lang.String" itemvalue="Application.LanzadorCreador Internet" />
+      <item index="6" class="java.lang.String" itemvalue="Application.LanzarAtacante1" />
+      <item index="7" class="java.lang.String" itemvalue="Application.LanzarAtacante2" />
+      <item index="8" class="java.lang.String" itemvalue="Application.LanzarAtacante3" />
+      <item index="9" class="java.lang.String" itemvalue="Application.LanzarDefensor1" />
+      <item index="10" class="java.lang.String" itemvalue="Application.LanzarDefensor2" />
+      <item index="11" class="java.lang.String" itemvalue="Application.LanzarDefensor3" />
+      <item index="12" class="java.lang.String" itemvalue="Application.LanzarDefensor4" />
+      <item index="13" class="java.lang.String" itemvalue="Application.LanzarDefensor5" />
+      <item index="14" class="java.lang.String" itemvalue="Application.LanzarDefensor6" />
+      <item index="15" class="java.lang.String" itemvalue="Application.LanzarDefensor7" />
+      <item index="16" class="java.lang.String" itemvalue="Application.LanzarDefensor8" />
+      <item index="17" class="java.lang.String" itemvalue="Application.LanzarDefensor9" />
+      <item index="18" class="java.lang.String" itemvalue="Application.Lanzador3" />
+      <item index="19" class="java.lang.String" itemvalue="Application.Lanzador4" />
+    </list>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8befe79f-f2fc-4b5b-9f47-3f56d1637ba7" name="Default" comment="" />
+      <created>1459344082275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1459344082275</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="0" width="1368" height="736" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2133829" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32575756" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49675325" sideWeight="0.37579957" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2560778" sideWeight="0.6242004" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4318182" sideWeight="0.57036245" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3560606" sideWeight="0.49707174" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/SI_P4" />
+      <path value="$PROJECT_DIR$/Practica-Final" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="126" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="Mapa.filas" language="JAVA" custom="" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/Movimiento.java" />
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/Movimiento.java" />
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../Anexos/jade.jar!/jade/domain/FIPANames.class" />
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/Movimiento.java" />
+    <entry file="jar://$PROJECT_DIR$/../Anexos/jade.jar!/jade/lang/acl/ACLMessage.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/lang/Thread.java" />
+    <entry file="file://$PROJECT_DIR$/src/Recursos/Automata.java" />
+    <entry file="file://$PROJECT_DIR$/src/Recursos/Estrategia.java" />
+    <entry file="jar://$PROJECT_DIR$/../Anexos/jade.jar!/jade/core/behaviours/Behaviour.class" />
+    <entry file="file://$PROJECT_DIR$/TO_DO.txt" />
+    <entry file="jar://$PROJECT_DIR$/../Anexos/jade.jar!/jade/core/Agent.class" />
+    <entry file="jar://$PROJECT_DIR$/../Anexos/jade.jar!/jade/wrapper/AgentController.class" />
+    <entry file="jar://$PROJECT_DIR$/../Anexos/jade.jar!/jade/wrapper/PlatformController.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/lang/String.java" />
+    <entry file="file://$PROJECT_DIR$/src/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/Agente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1320">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/AgenteAtacante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/AgenteDefensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="45" column="59" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Agentes/AgenteCreador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-220">
+          <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/Actuar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/BuscarPlataforma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="83" column="60" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/EnviarMensajes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/NegociarEntrada.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/Pensar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Comportamientos/RecibirMensajes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recursos/A_Estrella.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2260">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recursos/EstrategiaAtaque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3900">
+          <caret line="201" column="23" selection-start-line="201" selection-start-column="23" selection-end-line="201" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recursos/EstrategiaDefensiva.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="96" column="26" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recursos/Mapa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="27" column="48" selection-start-line="27" selection-start-column="48" selection-end-line="27" selection-end-column="48" />
+          <folding>
+            <element signature="method#obtenerDescripcion#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosElemento#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getMapaObstaculos#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getMapaBase#0;class#Mapa#0" expanded="false" />
+            <element signature="method#addNuevasPosiciones#0;class#Mapa#0" expanded="false" />
+            <element signature="method#toString#0;class#Mapa#0" expanded="false" />
+            <element signature="method#buscarPosicionDondeDefender#0;class#Mapa#0" expanded="false" />
+            <element signature="method#mejorCasillaDefensivaVecinos#0;class#Mapa#0" expanded="false" />
+            <element signature="method#mejorCasillaEntornoDefensa#0;class#Mapa#0" expanded="false" />
+            <element signature="method#estaCasillaPasaPortadorBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+            <element signature="method#esAccesible#0;class#Mapa#0" expanded="false" />
+            <element signature="method#calcularHeuristicaDefensiva#0;class#Mapa#0" expanded="false" />
+            <element signature="method#estoyEnElEntornoDeDefensa#0;class#Mapa#0" expanded="false" />
+            <element signature="method#estaEnElEntornoDeDefensa#0;class#Mapa#0" expanded="false" />
+            <element signature="method#calcularDistancia#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosSalidaEnemigo#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosMiBase#0;class#Mapa#0" expanded="false" />
+            <element signature="method#quienVaPor#0;class#Mapa#0" expanded="false" />
+            <element signature="method#esDefensa#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getAtacantesEnEntornoDefensivoYCercaDeMi#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosMiBandera#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosVecinasYmia#0;class#Mapa#0" expanded="false" />
+            <element signature="method#atacanteConMiBandera#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosBaseEnemiga#0;class#Mapa#0" expanded="false" />
+            <element signature="method#defensorContestaSuPosicion#0;class#Mapa#0" expanded="false" />
+            <element signature="method#puedoResponderAlServidor#0;class#Mapa#0" expanded="false" />
+            <element signature="method#prepararseParaRecibirPosDefensivas#0;class#Mapa#0" expanded="false" />
+            <element signature="method#banderaEnemigaEnMiBase#0;class#Mapa#0" expanded="false" />
+            <element signature="method#miEquipoTieneBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+            <element signature="method#enemigoEnMiCaminoBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosAccesibleBanderaEnemiga#0;class#Mapa#0" expanded="false" />
+            <element signature="method#esquivarEnemigoEnMiCamino#0;class#Mapa#0" expanded="false" />
+            <element signature="method#haTerminadoElJuego#0;class#Mapa#0" expanded="false" />
+            <element signature="method#respuestaEscolta#0;class#Mapa#0" expanded="false" />
+            <element signature="method#esquivarEnemigoEnMiCaminoConEscolta#0;class#Mapa#0" expanded="false" />
+            <element signature="method#estoyEnZonaDefensiva#0;class#Mapa#0" expanded="false" />
+            <element signature="method#damePosZonaDefensivaEscolta#0;class#Mapa#0" expanded="false" />
+            <element signature="method#darPosicionEscolta#0;class#Mapa#0" expanded="false" />
+            <element signature="method#getPosPasaPortador#0;class#Mapa#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recursos/Nodo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Recursos/CONSTANTES.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Sesion4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>slf4j-log4j12-1.7.21</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+######################################
+#Inner duplicados
+######################################
+inner int iGlobal <- 2;
+inner int iGlobal <- 2;
+
+######################################
+#Concordancia de tipos
+######################################
+inner int aGlobal <- 2.0;
+inner double dGlobal <- false;
+inner boolean bGlobal <- 3;
+
+######################################
+#Inner declarados de forma correcta
+######################################
+inner double pruebaGlobal <- 2;
+inner int pruebaGlobal2 <- 0;
+inner boolean pruebaGlobal3 <- true;
+
+rules {  
+}

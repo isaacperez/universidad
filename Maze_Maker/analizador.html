@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+<link href="css/blog.css" rel="stylesheet">
+	<script type="text/javascript" src="js/ThreeSound.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/OBJLoader.js"></script>
+	<script type="text/javascript" src="lab.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Maze-Maker</title>
+</head>
+
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+
+
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h2>Created by</h2>
+</div>
+<div class="panel-body">
+	<p class="lead">Isaac Pérez Borrero (perezborreroisaac@gmail.com)</p>
+	<p class="lead">Daniel Morueta Santiago (dani_morueta@hotmail.com) </p>
+</div>
+</div>
+
+
+<script type="application/x-glsl" id="sky-vertex">
+varying vec2 vUV;
+
+void main() {
+  vUV = uv;
+  vec4 pos = vec4(position, 1.0);
+  gl_Position = projectionMatrix * modelViewMatrix * pos;
+}
+</script>
+
+<script type="application/x-glsl" id="sky-fragment">
+uniform sampler2D texture;
+varying vec2 vUV;
+
+void main() {
+  vec4 sample = texture2D(texture, vUV);
+  gl_FragColor = vec4(sample.xyz, sample.w);
+}
+</script>
+
+<div id ="interfaz">
+
+    <p style="margin-left: 5px;margin-right: 10px; margin-top: 10px" >Seleccionar fichero a analizar:</p>
+    <input type="file" id="fileInput" style="margin-left: 5px;margin-right: 10px; margin-top: 10px">
+
+
+</div>
+<div style="display:block;margin-top:5px;margin-left:5px"><pre><code>Pulsar la tecla <b>'s'</b> para avanzar en la representacion</code></pre></div>
+<div class="bs-example" data-example-id="simple-alerts">
+	<div style="display:none; margin-left:5px" class="alert alert-success" role="alert" id="demo3"></div>
+	<div style="display:none; margin-left:5px" class="alert alert-danger" role="alert" id="demo4"></div>
+	<div style="display:none; margin-left:5px" class="alert alert-info" role="alert" id="demo"></div>
+	<div style="display:none; margin-left:5px" class="alert alert-warning" role="alert" id="demo2"></div>
+</div>
+
+
+
+<div style="margin-top: 5px;margin-left:5px" id="render">
+</div>
+
+
+
+    <script>
+
+        var cargado = false;
+
+		window.onload = function() {
+		var fileInput = document.getElementById('fileInput');
+
+		fileInput.addEventListener('change', function(e) {
+			var file = fileInput.files[0];
+
+
+
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					eval(reader.result);
+					cargado = true;
+					comenzar();
+
+				}
+
+				reader.readAsBinaryString(file);
+
+		});
+	}
+
+
+        function comenzar(){
+
+                if(cargado)
+                {
+                    minutos = Math.floor(tiempo/60);
+                    tiempo = tiempo - (60*minutos);
+                    eliminarElemento("interfaz");
+                    if(finalizado)
+					{
+						fin = "Has finalizado Correctamente el laberinto.";
+						document.getElementById("demo3").style.display="inline-block";
+						document.getElementById("demo3").innerHTML = fin;
+
+					}
+                    else
+					{
+						fin = "No finalizaste el laberinto.";
+						document.getElementById("demo4").style.display="inline-block";
+						document.getElementById("demo4").innerHTML = fin;
+
+					}
+					document.getElementById("demo").style.display="inline-block";
+                    document.getElementById("demo").innerHTML =" Tiempo total: "+ minutos + " minutos, " + tiempo + " segundos. ";
+
+
+                    // Usar demo2 para ir pintando el tiempo
+
+                    inicio();
+
+                }
+                else{
+					document.getElementById("demo").style.display="inline-block";
+                    document.getElementById("demo").innerHTML = "No se ha pulsado cargar o no se ha elegido ningun archivo";
+                }
+        }
+
+        function eliminarElemento(id){
+        	imagen = document.getElementById(id);
+        	if (!imagen){
+        		alert("El elemento selecionado no existe");
+        	} else {
+        		padre = imagen.parentNode;
+        		padre.removeChild(imagen);
+        	}
+        }
+
+
+
+			var div;
+			var contador =0;
+			var Laberinto;
+			var Objetos;
+			var inicial;
+			var final;
+			var xFinal;
+			var yFinal;
+			var fechaInicial= 0;
+			var fechaFinal;
+			var dibujaTechoParedes = true;
+			var fondo= 1;
+			var numCuadrados;
+			var soundRenderer;
+			var Render=new THREE.WebGLRenderer();								//El render
+
+			var Escenario=new THREE.Scene();									//El escenario
+			var Ancho=window.innerWidth-25;									//Ancho escena
+			var Alto=window.innerHeight-25;									//Alto
+
+			var Angulo = 30;
+			var Aspecto=Ancho/Alto;
+			var cerca=0.1;
+			var lejos=10000;
+			var angulo = 0;														//Angulo de la camara
+
+			paso = 0.05;
+			paso2 = 0.02;
+			cambio = 0;
+			cambio2 = 0;
+			cuenta = 4;
+			cuenta2 = 1;
+
+			document.onkeydown = checkKey;										    //Para leer la teclas
+
+			var Camara=new THREE.PerspectiveCamera(Angulo,Aspecto,cerca,lejos);     //camara
+
+			var object;
+
+			var trianguloMaterial = new THREE.MeshBasicMaterial( {vertexColors :THREE.VertexColors} );
+			var trianguloGeometria = new THREE.Geometry();
+			trianguloGeometria.vertices.push(new THREE.Vector3( 0.0,  2.0, 0.0));
+			trianguloGeometria.vertices.push(new THREE.Vector3(-2.0, -2.0, 0.0));
+			trianguloGeometria.vertices.push(new THREE.Vector3( 2.0, -2.0, 0.0));
+			trianguloGeometria.faces.push(new THREE.Face3(0, 1, 2));
+			trianguloGeometria.faces[0].vertexColors[0] = new THREE.Color(0xFFFF00);
+			trianguloGeometria.faces[0].vertexColors[1] = new THREE.Color(0x000000);
+			trianguloGeometria.faces[0].vertexColors[2] = new THREE.Color(0x000000);
+
+			var triangulo = new THREE.Mesh(trianguloGeometria, trianguloMaterial);
+
+
+			function checkKey(e){
+
+				e = e || window.event;
+
+				if(e.keyCode == '83'){
+
+
+				if(contador<CamaraNum)
+				{
+
+
+
+
+					triangulo.position.x = CamaraX[contador];
+					triangulo.position.z = CamaraZ[contador];
+					triangulo.position.y = 5.5;
+
+					triangulo.rotation.x = degInRad(-90);
+
+					triangulo.rotation.z = CamaraAngulo[contador];
+
+					Escenario.add(triangulo);
+
+					var minutos = Math.floor((0.2*contador)/60);
+					var segundos = (0.2*contador) - (minutos*60);
+					document.getElementById("demo2").style.display="inline-block";
+					document.getElementById("demo2").innerHTML="Tiempo actual: "+minutos+" minutos, " +segundos.toFixed(2)+ " segundos";
+
+					contador++;
+				}
+
+				}
+
+			}
+
+			/******************************* Materiales *******************/
+
+			var bmap = THREE.ImageUtils.loadTexture( "texturas/suelo.jpg" );
+			var smap = THREE.ImageUtils.loadTexture( "texturas/suelos.png" );
+
+			var bmap2 = THREE.ImageUtils.loadTexture( "texturas/pared.png" );
+			var smap2 = THREE.ImageUtils.loadTexture( "texturas/pareds.png" );
+
+			var bmap3 = THREE.ImageUtils.loadTexture( "texturas/techo.jpg" );
+			var smap3 = THREE.ImageUtils.loadTexture( "texturas/techos.png" );
+
+			var oldMaterial = new THREE.MeshPhongMaterial({
+						  color      :  bmap,
+						  emissive   :  new THREE.Color("rgb(0,0,0)"),
+						  specular   :  smap,
+						  shininess  :  1,
+						  bumpMap    :  bmap,
+						  map        :  smap,
+						  bumpScale  :  0.06,
+						});
+
+			var oldMaterial2 = new THREE.MeshPhongMaterial({
+						  color      :  bmap2,
+						  emissive   :  new THREE.Color("rgb(0,0,0)"),
+						  specular   :  smap2,
+						  shininess  :  10,
+						  bumpMap    :  bmap2,
+						  map        :  smap2,
+						  bumpScale  :  0.01,
+						});
+
+			var oldMaterial3 = new THREE.MeshPhongMaterial({
+						  color      :  bmap3,
+						  emissive   :  new THREE.Color("rgb(0,0,0)"),
+						  specular   :  smap3,
+						  shininess  :  5,
+						  bumpMap    :  bmap3,
+						  map        :  smap3,
+						  bumpScale  :  1,
+						});
+
+
+			/******************************* Luces *******************/
+
+			ambientLight = new THREE.AmbientLight(0xffffff);
+			Escenario.add(ambientLight);
+
+
+			flashlight = new THREE.SpotLight(0xEFAD62,2,25);
+			//flashlight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xff9930 } ) ) );
+			flashlight.position.set(0,0,2);
+			Camara.add(flashlight);
+			flashlight.target = Camara;
+
+			/******************************Modelos********************/
+
+			var manager = new THREE.LoadingManager();
+				manager.onProgress = function ( item, loaded, total ) {
+
+					console.log( item, loaded, total );
+
+				};
+
+			var texture = new THREE.Texture();
+			var texture2 = new THREE.Texture();
+			var texture3 = new THREE.Texture();
+			var texture4 = new THREE.Texture();
+
+			var onProgress = function ( xhr ) {
+					if ( xhr.lengthComputable ) {
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round(percentComplete, 2) + '% downloaded' );
+					}
+				};
+
+			var onError = function ( xhr ) {};
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/vase.png', function ( image ) {
+
+					texture.image = image;
+					texture.needsUpdate = true;
+					texture.wrapS = THREE.RepeatWrapping;
+					texture.wrapT = THREE.RepeatWrapping;
+					texture.repeat.set( 1, 1 );
+
+			} );
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/plant.jpg', function ( image ) {
+
+					texture2.image = image;
+					texture2.needsUpdate = true;
+
+
+			} );
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/mesa.jpg', function ( image ) {
+
+					texture3.image = image;
+					texture3.needsUpdate = true;
+					texture3.wrapS = THREE.RepeatWrapping;
+					texture3.wrapT = THREE.RepeatWrapping;
+					texture3.repeat.set( 1, 1 );
+
+			} );
+
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/taza.jpg', function ( image ) {
+
+					texture4.image = image;
+					texture4.needsUpdate = true;
+					texture4.wrapS = THREE.RepeatWrapping;
+					texture4.wrapT = THREE.RepeatWrapping;
+					texture4.repeat.set( 1, 1 );
+
+			} );
+
+
+
+
+
+
+
+
+
+
+
+			/*******************************Funciones *******************/
+
+			function degInRad(deg) {											//Funcion para convertir a radianes
+					return deg * Math.PI / 180;
+			}
+
+			function casillaFinal()
+			{
+				var filaFinal = (final-1)%numCuadrados;
+				var columnaFinal = Math.floor((final-1)/numCuadrados);
+
+
+				var x = (-(numCuadrados*10)/2) +((columnaFinal*10)+5);
+				var y = ((numCuadrados*10)/2) -((filaFinal*10)+5);
+
+				var sphere = new THREE.SphereGeometry( 0.5, 16, 8 );
+				light1 = new THREE.PointLight( 0xffffcc, 3, 7);
+				light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffcc } ) ) );
+				light1.position.set(x,1,y);
+				Escenario.add ( light1 );
+
+				var x = columnaFinal;
+				var y = filaFinal;
+
+
+
+			}
+
+
+
+
+			function inicio(){
+
+				var fila = (inicial-1)%numCuadrados;
+				var columna = Math.floor((inicial-1)/numCuadrados);
+
+				var x = (-(numCuadrados*10)/2) +((columna*10)+5);
+				var y = ((numCuadrados*10)/2) -((fila*10)+5);
+
+				var altura = 20*numCuadrados;
+				Camara.position.set(0,altura,0);										//Se pone la camara en posicion
+				Camara.rotation.x = degInRad(-90);
+				Camara.rotation.z = degInRad(-180);
+
+
+				Render.setSize(Ancho,Alto);											//Tamaño del render
+				document.getElementById('render').appendChild(Render.domElement);	//Se agrega el render al documento html
+				Escenario.add(Camara);
+
+				dibujarCielo();
+				crearLaberinto();
+				casillaFinal();
+				animacion();
+			}
+
+			function dibujarCielo(){
+
+				var geometry = new THREE.SphereGeometry(4000,60, 40);
+				var uniforms = {
+				texture: { type: 't', value: THREE.ImageUtils.loadTexture('cielos/cielo' + fondo + '.png') }
+				};
+
+				var material = new THREE.ShaderMaterial( {
+				uniforms:       uniforms,
+				vertexShader:   document.getElementById('sky-vertex').textContent,
+				fragmentShader: document.getElementById('sky-fragment').textContent
+				});
+
+				skyBox = new THREE.Mesh(geometry, material);
+				skyBox.scale.set(-1, 1, 1);
+				skyBox.eulerOrder = 'XZY';
+				skyBox.renderDepth = 1000.0;
+				Escenario.add(skyBox);
+			}
+
+			function crearLaberinto()
+			{
+
+				MaxFila = numCuadrados;
+				MaxColumna = numCuadrados;
+
+
+
+				for (i=0;i<MaxFila;i++) {
+
+					for (j=0;j<MaxColumna ;j++) {
+
+						switch(Laberinto[i][j])
+						{
+
+							case 1:
+								figura1(j,i)
+								break;
+							case 2:
+								figura2(j,i)
+								break;
+							case 3:
+
+								figura3(j,i);
+								break;
+							case 4:
+								figura4(j,i)
+								break;
+							case 5:
+
+								figura5(j,i);
+								break;
+
+							case 6:
+								figura6(j,i);
+								break;
+
+							case 7:
+								figura7(j,i);
+								break;
+							case 8:
+								figura8(j,i);
+								break;
+							case 9:
+
+								figura9(j,i);
+								break;
+
+							case 10:
+
+								figura10(j,i);
+								break;
+
+							case 11:
+
+								figura11(j,i);
+								break;
+
+							case 12:
+
+								figura12(j,i);
+								break;
+
+							case 13:
+
+								figura13(j,i);
+								break;
+
+							case 14:
+
+								figura14(j,i);
+								break;
+
+							case 15:
+								figura15(j,i);
+								break;
+
+
+						}
+						switch(Objetos[i][j])
+						{
+
+							case 1:
+								pintarObjeto1(j,i)
+								break;
+							case 2:
+								pintarObjeto2(j,i)
+								break;
+							case 3:
+								pintarObjeto3(j,i)
+								break;
+						}
+
+					}
+
+				}
+
+
+			}
+
+			function figura1(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x+1,z,90 );
+				cargar_modelo(x,z,0 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+				// Fila y Columna x
+
+			}
+
+			function figura2(x,z)
+			{
+				debugger;
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x+1,z,90 );
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x,z+1,0 );
+				}
+
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+
+			}
+
+
+			function figura3(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x+1,z,90 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+
+			}
+
+			function figura4(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x,z,0 );
+				cargar_modelo(x,z+1,0 );}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+
+			}
+
+			function figura5(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				cargar_modelo(x,z,90 );}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+			}
+
+			function figura6(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z+1,0);
+				cargar_modelo(x,z,90 );}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+
+			}
+
+			function figura7(x,z)
+			{
+
+				if(dibujaTechoParedes == true) cargar_modelo(x,z,90 );
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+
+
+			}
+
+			function figura8(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x+1,z,90 );
+				cargar_modelo(x,z,0 );
+				cargar_modelo(x,z+1,0 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+
+			}
+
+			function figura9(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				cargar_modelo(x+1,z+1,-90 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+			}
+
+			function figura10(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z+1,0);
+				cargar_modelo(x+1,z+1,-90 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+			}
+
+			function figura11(x,z)
+			{
+				if(dibujaTechoParedes == true)cargar_modelo(x+1,z,90 );
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+			}
+
+			function figura12(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				cargar_modelo(x,z+1,0);
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+			}
+
+			function figura13(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+			}
+
+			function figura14(x,z)
+			{
+
+				if(dibujaTechoParedes == true) cargar_modelo(x,z+1,0);
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+
+			}
+
+			function figura15(x,z)
+			{
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+			}
+
+			function pintarObjeto1(x,z){
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/mesa.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture3 ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					object.position.y = 0;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.0150,0.0200,0.0150);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/taza.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture4 ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) + 0.5;
+					object.position.y = 4.3;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.0100,0.0100,0.0100);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+				var cristal = new THREE.MeshPhongMaterial( { color: 0xCCFFE5, transparent: true,specular: 0xffffff,opacity:0.7 } )
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/Botella.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material = cristal ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) ;
+					object.position.y = 4.05;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5)+1;
+					object.scale.set(0.0025,0.0025,0.0025);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			}
+
+			function pintarObjeto2(x,z){
+
+				var colorSilla = new THREE.MeshPhongMaterial( { color: 0x000000 } )
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/Silla.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material = colorSilla ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) -2;
+					object.position.y = 0.1;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5)+12;
+					object.scale.set(0.0125,0.0125,0.0125);
+					object.rotation.y = degInRad(70);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			}
+
+			function pintarObjeto3(x,z){
+				debugger;
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/vase.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					object.position.y = 0;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.0140,0.0140,0.0140);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/plant.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture2 ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) +0.1;
+					object.position.y = 3.6;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.004,0.004,0.004);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			}
+
+
+			function cargar_modelo(x, z, r){
+
+					var geom = new THREE.Geometry();
+					var v0 = new THREE.Vector3(0.0,0.0,0.0);
+					var v1 = new THREE.Vector3(10.0,0.0,0.0);
+					var v2 = new THREE.Vector3(10.0,10.0,0.0);
+					var v3 = new THREE.Vector3(0.0,10.0, 0.0);
+
+					geom.vertices.push(v0);
+					geom.vertices.push(v1);
+					geom.vertices.push(v2);
+					geom.vertices.push(v3);
+
+					var uvs =[];
+					uvs.push(new THREE.Vector2(0.0,0.0));
+					uvs.push(new THREE.Vector2(1.0,0.0));
+					uvs.push(new THREE.Vector2(1.0,1.0));
+					uvs.push(new THREE.Vector2(0.0,1.0));
+
+
+					geom.faces.push( new THREE.Face3(0, 1, 2) );
+					geom.faceVertexUvs[0].push([uvs[0],uvs[1],uvs[2]]);
+					geom.faces.push( new THREE.Face3(0, 2, 3) );
+					geom.faceVertexUvs[0].push([uvs[0],uvs[2],uvs[3]]);
+
+					geom.faces.push( new THREE.Face3(2, 1, 0) );
+					geom.faceVertexUvs[0].push([uvs[2],uvs[1],uvs[0]]);
+					geom.faces.push( new THREE.Face3(3, 2, 0) );
+					geom.faceVertexUvs[0].push([uvs[3],uvs[2],uvs[0]]);
+
+					geom.computeFaceNormals();
+
+					var cubo = new THREE.Mesh(geom, oldMaterial2);
+					r = r * Math.PI/ 180;
+					cubo.rotation.y=r;
+
+					cubo.position.x = (-(numCuadrados*10)/2) + (x*10);
+					cubo.position.z = ((numCuadrados*10)/2) - (z*10);
+
+					Escenario.add( cubo );
+
+			}
+
+
+
+
+			function animacion(){
+					requestAnimationFrame(animacion);
+					render_modelo();
+
+			}
+
+			function render_modelo(){
+
+					Render.setScissor(0,0,Ancho,Alto);
+					Render.enableScissorTest(true);
+					Render.clear();
+					Render.render(Escenario,Camara);
+					efectoMeta();
+
+			}
+
+
+
+			function efectoMeta(){
+				if( cambio2 == 0 ){
+						cuenta2 = cuenta2 + paso2;
+						light1.position.y = light1.position.y + paso2;
+						if(cuenta2 > 7) cambio2 = 1;
+				}else{
+						cuenta2 = cuenta2 - paso2*2;
+						light1.position.y = light1.position.y - paso2*2;
+						if(cuenta2 < 1) cambio2 = 0;
+				}
+			}
+
+
+    </script>
+
+</body>
+
+</html>

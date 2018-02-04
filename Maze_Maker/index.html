@@ -1,0 +1,2293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<!-- Custom styles for this template -->
+<link href="css/blog.css" rel="stylesheet">
+	<script type="text/javascript" src="js/ThreeSound.js"></script>
+	<script src="js/three.min.js"></script>
+	<script src="js/OBJLoader.js"></script>
+	<script src="js/FileSaver.js"></script>
+	<script type="text/javascript" src="lab.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Maze-Maker</title>
+
+
+<style type="text/css">
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				color: #808080;
+				padding: 5px;
+				font-family: “helvetica neue”, helvetica, arial, sans-serif;
+				font-size: 13px;
+				text-align: center;
+			}
+
+			#info2 {
+				position: absolute;
+				bottom: 0px; width: 100%;
+				color: #808080;
+				padding: 5px;
+				font-family: “helvetica neue”, helvetica, arial, sans-serif;
+				font-size: 13px;
+				text-align: center;
+			}
+
+			a {
+				color: #000;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: #ff1561;
+			}
+		</style>
+
+</head>
+<body >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<div id="resultados" class="bs-example" style="margin-top: 15px;margin-left:15px; display: none" data-example-id="simple-alerts">
+	<div style="display:none" class="alert alert-success" role="alert" id="res1"></div>
+	<div style="display:none" class="alert alert-danger" role="alert" id="res2"></div>
+	<div style="display:none" class="alert alert-warning" role="alert" id="res4"></div>
+	<div style="display:none" class="alert alert-info" role="alert" id="res3"></div>
+
+</div>
+
+<div class="bs-example" id="reintentar"  style="margin-top: 15px; margin-left:15px;display: none" >
+<button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"onclick="reintentar()">
+	Volver a intentar
+</button>
+<button style="margin-left:15px" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"onclick="parent.location='analizador.html'">
+	Ir al analizador
+</button>
+
+</div>
+
+<script>
+function reintentar()
+{
+	location.reload();
+}
+</script>
+
+<div id="inicio">
+
+	<div class="panel panel-default">
+	<div class="panel-heading">
+	<h2>Created by</h2>
+	</div>
+	<div class="panel-body">
+		<p class="lead">Isaac Pérez Borrero (isaperbor@gmail.com)</p>
+		<p class="lead">Daniel Morueta Santiago (dani_morueta@hotmail.com) </p>
+	</div>
+	</div>
+
+
+
+	<div id ="info6" style="display:none" class="panel panel-default">
+	<!-- Default panel contents -->
+		<div class="panel-heading"><h3>Controles</h3></div>
+
+		<!-- Table -->
+		<table class="table">
+		<thead>
+			<tr>
+			<th>Tecla</th>
+			<th>Uso</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			<th scope="row">Esc</th>
+			<td>Abandonar partida.</td>
+			</tr>
+
+			<tr>
+			<th scope="row">W</th>
+			<td>Avanzar hacia delante.</td>
+			</tr>
+
+			<tr>
+			<th scope="row">S</th>
+			<td>Avanzar hacia atras.</td>
+			</tr>
+
+			<tr>
+			<th scope="row">A</th>
+			<td>Girar hacia la izquierda.</td>
+			</tr>
+
+			<tr>
+			<th scope="row">D</th>
+			<td>Girar hacia la derecha.</td>
+			</tr>
+
+			<tr>
+			<th scope="row">Raton</th>
+			<td>Girar en el sentido del movimiento.</td>
+			</tr>
+
+		</tbody>
+		</table>
+	</div>
+
+	<div id="info1"><pre><code>El tamaño del laberinto debe estar entre 5 y 50 </code></pre></div>
+
+	<div class="bs-example" style="margin-top: 15px" data-example-id="simple-alerts">
+		<div style="display:none" class="alert alert-success" role="alert" id="info2"></div>
+		<div style="display:none" class="alert alert-danger" role="alert" id="info3"></div>
+		<div style="display:none" class="alert alert-info" role="alert" id="info4"></div>
+		<div style="display:none" class="alert alert-warning" role="alert" id="info5"></div>
+	</div>
+
+
+
+	<div id="dim"
+		style="display:block;margin-top:10px;margin-left: 20px; " >
+
+		Tamaño del laberinto: <input type="text" id="myText" value="5">
+		<button onclick="Aceptar()" style="margin-left: 10px;margin-right: 10px;">Aceptar</button>
+		<button onclick="AceptarDemo()" style="margin-left: 10px;margin-right: 10px;">Demo Laberinto</button>
+		<input type=button onClick="parent.location='analizador2.html'" value='Demo Analizador'>
+	</div>
+
+	<table id="tabla2"
+		style="margin-right: 10px; margin-top: 5px;margin-left: 20px;
+		display:inline-block" >
+	</table>
+
+	<div id="botones"
+	style="margin-left: 10px;margin-top: 10px;
+	display:inline-block">
+	</div>
+
+	<div id="lista"
+	style=" margin-top: 15px; vertical-align: top;display:inline-block">
+	</div>
+
+	<div style="display:block"><table id="my_table"  style="margin-left: 20px;margin-top:5px" > </table></div>
+	<br></br>
+</div>
+
+<div id="info"style="display:none" >
+			<a href="index.html"><b>Volver atras</b></a>
+		</div>
+<div id="render">
+</div>
+
+</body>
+
+<script type="application/x-glsl" id="sky-vertex">
+varying vec2 vUV;
+
+void main() {
+  vUV = uv;
+  vec4 pos = vec4(position, 1.0);
+  gl_Position = projectionMatrix * modelViewMatrix * pos;
+}
+</script>
+
+<script type="application/x-glsl" id="sky-fragment">
+uniform sampler2D texture;
+varying vec2 vUV;
+
+void main() {
+  vec4 sample = texture2D(texture, vUV);
+  gl_FragColor = vec4(sample.xyz, sample.w);
+}
+</script>
+
+<script>
+
+
+/*****************************************************************/
+/********************* Funciones onClick de los botones *****************/
+/*****************************************************************/
+
+
+// Boton Aceptar
+function AceptarDemo()
+{
+	document.getElementById("info").style.display="inline";
+	numCuadrados = 10;
+	Objetos = new Array();
+	for( columna = 0; columna < numCuadrados; columna++)
+	{
+		Objetos[columna] = new Array();
+
+		for (fila = 0; fila<numCuadrados; fila++)
+		{
+
+				Objetos[columna][fila] = 0;
+
+		}
+
+	}
+
+
+
+	eliminarElemento("inicio");
+	Laberinto = crea_laberinto(10, 10, 1);
+	var inicialAleatorio = Math.floor((Math.random() * 100) + 1);
+	var fila = (inicialAleatorio-1)%numCuadrados;
+	var columna = Math.floor((inicialAleatorio-1)/numCuadrados);
+
+	while(Laberinto[fila][columna]==0 && (fila!=0 || columna!=0 || fila!=9 || columna!=9))
+	{
+		inicialAleatorio = Math.floor((Math.random() * 99) + 0);
+
+		fila = (inicialAleatorio-1)%numCuadrados;
+		columna = Math.floor((inicialAleatorio-1)/numCuadrados);
+	}
+
+	var finalAleatorio = Math.floor((Math.random() * 100) + 1);
+	var fila = (finalAleatorio-1)%numCuadrados;
+	var columna = Math.floor((finalAleatorio-1)/numCuadrados);
+
+	while(Laberinto[fila][columna]==0 && (finalAleatorio!=inicialAleatorio) )
+	{
+		finalAleatorio = Math.floor((Math.random() * 100) + 1);
+
+		fila = (finalAleatorio-1)%numCuadrados;
+		columna = Math.floor((finalAleatorio-1)/numCuadrados);
+	}
+
+	var obj1 = Math.floor((Math.random() * 100) + 1);
+	var fila = (obj1-1)%numCuadrados;
+	var columna = Math.floor((obj1-1)/numCuadrados);
+
+	while(Laberinto[fila][columna]==0 && (finalAleatorio!=obj1) && (inicialAleatorio!=obj1) )
+	{
+		obj1 = Math.floor((Math.random() * 100) + 1);
+
+		fila = (obj1-1)%numCuadrados;
+		columna = Math.floor((obj1-1)/numCuadrados);
+	}
+
+	Objetos[fila][columna] = 1;
+
+	var obj2 = Math.floor((Math.random() * 100) + 1);
+	var fila = (obj2-1)%numCuadrados;
+	var columna = Math.floor((obj2-1)/numCuadrados);
+
+	while(Laberinto[fila][columna]==0 && (finalAleatorio!=obj1) && (inicialAleatorio!=obj1) )
+	{
+		obj2 = Math.floor((Math.random() * 100) + 1);
+
+		fila = (obj2-1)%numCuadrados;
+		columna = Math.floor((obj2-1)/numCuadrados);
+	}
+
+	Objetos[fila][columna] = 2;
+
+	inicial = inicialAleatorio;
+	final = finalAleatorio;
+
+	inicio();
+	animacion();
+
+}
+
+
+// Boton Aceptar
+function Aceptar()
+{
+
+	// inicializacion de id para los botones de la tabla
+	id = 1;
+
+	// No crea las casillas a no ser que la dimension sea mayor que 0 y menor que 100
+
+	if(document.getElementById("myText").value>4 && document.getElementById("myText").value<51)
+	{
+
+		// Lectura del numero de cuadrados indicados y creacion de la tabla de botones
+		document.getElementById("info2").style.display="block";
+		document.getElementById("info2").innerHTML="Pincel para dibujar la casilla inicial(Solo se permite una)";
+		document.getElementById("info3").style.display="block";
+		document.getElementById("info3").innerHTML="Pincel para dibujar la casilla final(Solo se permite una)";
+		document.getElementById("info4").style.display="block";
+		document.getElementById("info4").innerHTML="<p><b>Solo se puede pintar objetos sobre casillas normales(CASILLAS PINTADAS SIN USAR NINGUN PINCEL).</b></p> <p>El pincel <b>Amarillo</b> permite dibujar una mesa.</p><p> El pincel <b>Purpura</b> una silla.</p><p> El pincel <b>Rosa</b> un jarron.</p>";
+		document.getElementById("info5").style.display="block";
+		document.getElementById("info5").innerHTML="<p>Cuando se pinta una casilla se podra pasar por ella, siendo el laberinto las casillas dibujadas y siendo inaccesibles las que tienen el color inicial.</p><p> <b>Si no hay pinceles seleccionados</b> se puede dibujar el laberinto de forma normal.</p><p>Se necesita casilla inicial y final para poder comenzar.</p><br></br><p> Con el boton <b>aleatorio</b> crea un laberinto aleatorio(sin casilla inicial y final).</p> <p>El boton <b>reset</b> devuelve el lienzo a su estado inicial.</p><p>En <b>Tipo deLaberinto</b> podemos elegir si dibujar paredes y techos o dibjuar solo el suelo y elegir entre varios fondos que representan el cielo.</p><br></br><p>Para borrar algo dibujado hay que tener seleccionado el pincel que lo dibujo y despues pulsar sobre la casilla a borrar.</p><b> PARA CAMBIAR DE PINCEL PRIMERO HAY QUE DESELECCIONAR EL QUE ESTE PULSADO Y LUEGO PULSAR OTRO O DIBUJAR EL LABERITNO NORMAL.</b>";
+		document.getElementById("info6").style.display="block";
+		numCuadrados = parseInt(document.getElementById("myText").value);
+		creaTabla();
+	}
+
+
+}
+
+
+function cambiarPincel(id)
+{
+	// Comprobacion para que solo pueda estar activo uno a la vez
+	if(  ( !Pinceles[0] && !Pinceles[1] && !Pinceles[2] && !Pinceles[3] && !Pinceles[4]) || (Pinceles[id-((numCuadrados*numCuadrados)+1)]) )
+	{
+
+		if(id == ((numCuadrados*numCuadrados)+1) )
+		{
+			if(Pinceles[0]==0)
+			{
+				document.getElementById((numCuadrados*numCuadrados)+1).style.backgroundColor='rgba(8, 255, 0, 0.52)';
+				Pinceles[0] = 1;
+			}
+			else
+			{
+				document.getElementById((numCuadrados*numCuadrados)+1).style.backgroundColor='#00FF00';
+				Pinceles[0] = 0;
+			}
+
+		}
+		else if (id == ((numCuadrados*numCuadrados)+2) )
+		{
+			if(Pinceles[1]==0)
+			{
+				document.getElementById((numCuadrados*numCuadrados)+2).style.backgroundColor='rgba(255, 0, 0, 0.52)';
+				Pinceles[1] = 1;
+			}
+			else
+			{
+				document.getElementById((numCuadrados*numCuadrados)+2).style.backgroundColor='#ff0000';
+				Pinceles[1] = 0;
+			}
+
+		}
+		else if (id == ((numCuadrados*numCuadrados)+3) )
+		{
+			if(Pinceles[2]==0)
+			{
+				document.getElementById((numCuadrados*numCuadrados)+3).style.backgroundColor='rgba(255, 234, 0, 0.63)';
+				Pinceles[2]=1;
+			}
+			else
+			{
+				document.getElementById((numCuadrados*numCuadrados)+3).style.backgroundColor='#fff300';
+				Pinceles[2]=0;
+			}
+		}
+		else if (id == ((numCuadrados*numCuadrados)+4) )
+		{
+			if(Pinceles[3]==0)
+			{
+				document.getElementById((numCuadrados*numCuadrados)+4).style.backgroundColor='rgba(110, 0, 255, 0.63)';
+				Pinceles[3] = 1;
+			}
+			else
+			{
+				document.getElementById((numCuadrados*numCuadrados)+4).style.backgroundColor='#7f00ff';
+				Pinceles[3] = 0;
+			}
+
+		}
+		else if (id == ((numCuadrados*numCuadrados)+5) )
+		{
+			if(Pinceles[4]==0)
+			{
+				document.getElementById((numCuadrados*numCuadrados)+5).style.backgroundColor='rgba(255, 0, 238, 0.55)';
+				Pinceles[4] = 1;
+			}
+			else
+			{
+				document.getElementById((numCuadrados*numCuadrados)+5).style.backgroundColor='#ff00dd';
+				Pinceles[4]=0;
+
+			}
+		}
+	}
+
+
+}
+
+// Botones de la tabla
+function cambiarBoton(id)
+{
+
+	// Atributos globales para el tratamiento del boton
+
+	boton = document.getElementById(id);
+	var fila = (id-1)%numCuadrados;
+	var columna = Math.floor((id-1)/numCuadrados);
+
+	// Si los pinceles no estan activos funciona de forma normal
+	if( ( !Pinceles[0] && !Pinceles[1] && !Pinceles[2] && !Pinceles[3] && !Pinceles[4]) )
+	{
+		if(Laberinto[fila][columna]==0)
+		{
+
+			Laberinto[fila][columna] = 1;
+
+			boton.style.backgroundColor='#3000D5'
+		}
+		else
+		{
+			document.getElementById(id).style.backgroundColor='#31B0D5'
+			Laberinto[fila][columna] = 0;
+			Objetos[fila][columna] = 0;
+			if(id==inicial)
+			{
+				inicial = 0; HayCasillaInicial=false;
+			}
+			else if(id==final)
+			{
+				final = 0; HayCasillaFinal=false;
+			}
+		}
+
+	}
+	else
+	{
+		if(Pinceles[0])
+		{
+			if(!HayCasillaInicial && (final!=id) )
+			{
+				inicial = id;
+				document.getElementById(id).style.backgroundColor=Colores[0];
+				HayCasillaInicial = true;
+				Laberinto[fila][columna]=1;
+			}
+			else if(inicial==id)
+			{
+				inicial = 0;
+				document.getElementById(id).style.backgroundColor='#31B0D5'
+				HayCasillaInicial=false;
+				Laberinto[fila][columna]=0;
+			}
+		}
+		else if(Pinceles[1])
+		{
+			// Comprueba de que no es la misma que la casilla inciial
+			if(!HayCasillaFinal && (inicial!=id))
+			{
+				final = id;
+				document.getElementById(id).style.backgroundColor=Colores[1];
+				HayCasillaFinal = true;
+				Laberinto[fila][columna]=1;
+			}
+			else if(final==id)
+			{
+				final = 0;
+				document.getElementById(id).style.backgroundColor='#31B0D5'
+				HayCasillaFinal=false;
+				Laberinto[fila][columna]=0;
+			}
+
+		}
+		else if(Pinceles[2])
+		{
+			// Si la casilla es parte del laberinto y no es la final ni la inicial
+			if(Laberinto[fila][columna]==1 && id!=inicial && id!=final)
+			{
+				// Si hay un objeto en esa casilla y se ha vuelto a pulsar la deja como estaba
+				if(Objetos[fila][columna]>0)
+				{
+					Objetos[fila][columna] = 0;
+					document.getElementById(id).style.backgroundColor='#3000D5'
+				}
+				else
+				{
+					Objetos[fila][columna] = 1;
+					document.getElementById(id).style.backgroundColor=Colores[2];
+				}
+
+			}
+
+		}
+		else if(Pinceles[3])
+		{
+			// Si la casilla es parte del laberinto y no es la final ni la inicial
+			if(Laberinto[fila][columna]==1 && id!=inicial && id!=final)
+			{
+				// Si hay un objeto en esa casilla y se ha vuelto a pulsar la deja como estaba
+				if(Objetos[fila][columna]>0)
+				{
+					Objetos[fila][columna] = 0;
+					document.getElementById(id).style.backgroundColor='#3000D5'
+				}
+				else
+				{
+					Objetos[fila][columna] = 2;
+					document.getElementById(id).style.backgroundColor=Colores[3];
+				}
+
+			}
+		}
+		else if(Pinceles[4])
+		{
+			// Si la casilla es parte del laberinto y no es la final ni la inicial
+			if(Laberinto[fila][columna]==1 && id!=inicial && id!=final)
+			{
+				// Si hay un objeto en esa casilla y se ha vuelto a pulsar la deja como estaba
+				if(Objetos[fila][columna]>0)
+				{
+					Objetos[fila][columna] = 0;
+					document.getElementById(id).style.backgroundColor='#3000D5'
+				}
+				else
+				{
+					Objetos[fila][columna] = 3;
+					document.getElementById(id).style.backgroundColor=Colores[4];
+				}
+
+			}
+		}
+	}
+}
+
+//Boton Aleatorio
+function LabAleatorio()
+{
+	// Se limpia y despues se trabaja
+	reiniciarBoton();
+
+	// Segun el tamaño del laberinto hace mas o menos recorridos
+
+	if(numCuadrados<15)
+	{
+		Laberinto = crea_laberinto(numCuadrados, numCuadrados, 1);
+	}
+	else if(numCuadrados>=15 && numCuadrados<45)
+	{
+		Laberinto = crea_laberinto(numCuadrados, numCuadrados, 2);
+
+	}
+	else
+	{
+		Laberinto = crea_laberinto(numCuadrados, numCuadrados, 3);
+	}
+
+	// Id de los botones
+	var id = 1;
+
+	// Visualizacion en la matriz del laberinto aleatorio creado
+
+	for( columna = 0; columna < numCuadrados; columna++)
+	{
+
+		for (fila = 0; fila<numCuadrados; fila++)
+		{
+
+
+			if(Laberinto[fila][columna]==1)
+			{
+				document.getElementById(id.toString()).style.backgroundColor='#3000D5'
+			}
+
+			id = id +1;
+
+		}
+
+	}
+
+}
+
+//Boton Reset
+function reiniciarBoton()
+{
+
+
+	for( columna = 0; columna < numCuadrados; columna++)
+	{
+
+		for (fila = 0; fila<numCuadrados; fila++)
+		{
+
+				Laberinto[fila][columna] = 0;
+				Objetos[fila][columna] = 0;
+
+		}
+
+	}
+
+	for (var id = 1; id<=(numCuadrados*numCuadrados);id++)
+	{
+		document.getElementById(id.toString()).style.backgroundColor='#31B0D5'
+	}
+
+	HayCasillaInicial = false;
+	HayCasillaFinal = false;
+	inicial = 0;
+	final = 0;
+
+}
+
+//Boton Crear
+function comenzar()
+{
+
+		// Si existe la casilla inicial por lo menos, deja comenzar
+		if(document.getElementById(inicial) && document.getElementById(final))
+		{
+
+			eliminarElemento("inicio");
+			inicio();
+			animacion();
+		}
+
+}
+
+// CheckBox Techo y Paredes
+function techoParedes()
+{
+	fondo = document.getElementById("check").selectedIndex;
+
+	/*if(dibujaTechoParedes) dibujaTechoParedes = false;
+	else dibujaTechoParedes = true;*/
+
+	if(fondo==0) dibujaTechoParedes = true;
+	else dibujaTechoParedes = false;
+
+
+}
+
+function eliminarElemento(id){
+	imagen = document.getElementById(id);
+	if (!imagen){
+		alert("El elemento selecionado no existe");
+	} else {
+		padre = imagen.parentNode;
+		padre.removeChild(imagen);
+	}
+}
+
+
+/****************************************************************************/
+/************ Funciones para la creacion de la tabla de botones y del laberinto ***************/
+/***************************************************************************/
+
+function iniciarBotones()
+{
+
+	// Creacion del laberinto
+	var Laberinto = new Array();
+	for (fila = 0; fila<numCuadrados; fila++)
+	{
+		Laberinto[fila]= new Array();
+	}
+
+	// Llenado del laberinto
+
+	for( columna = 0; columna < numCuadrados; columna++)
+	{
+
+		for (fila = 0; fila<numCuadrados; fila++)
+		{
+
+				Laberinto[fila][columna] = 0;
+
+		}
+
+	}
+
+	return Laberinto;
+
+
+}
+
+
+
+
+// Crea la matriz para crear el laberinto inicializandola a 0
+function iniciarLaberinto()
+{
+
+	// Creacion del laberinto
+	var Laberinto = new Array();
+	for (fila = 0; fila<numCuadrados; fila++)
+	{
+		Laberinto[fila]= new Array();
+	}
+
+	// Llenado del laberinto
+
+	for( columna = 0; columna < numCuadrados; columna++)
+	{
+
+		for (fila = 0; fila<numCuadrados; fila++)
+		{
+
+				Laberinto[fila][columna] = 0;
+
+		}
+
+	}
+
+	return Laberinto;
+
+
+}
+
+// Creacion de la tabla
+function creaTabla()
+{
+	//Variables globales: Inicial = id casilla inicio, HayCasillaInicial para comprobar que solo hay una casilla como inicial, Laberinto= matriz para crear el laberinto
+	inicial = 0;
+	final = 0;
+	HayCasillaInicial = false;
+	HayCasillaFinal = false;
+	Laberinto = iniciarLaberinto();
+	Objetos = iniciarBotones();
+	Pinceles = [0,0,0,0,0];
+
+	// Cada vez que se pulsa el boton aceptar se borra la tabla y se vuelve a crear con el valor indicado
+
+	var Table = document.getElementById("my_table");
+	Table.innerHTML = "";
+	var Table2 = document.getElementById("tabla2");
+	Table2.innerHTML="";
+
+
+	// Tamaño de los cuadrados
+	tamboton =Math.floor((1000 - (1300/numCuadrados)) /numCuadrados);
+
+	// Creacion de la tabla de tamaño: numCuadradosXnumCuadrados
+
+	for (fila = 0; fila < numCuadrados; fila++)
+	{
+		appendRow();
+
+	}
+	for (columna = 0; columna < numCuadrados;columna++)
+	{
+		appendColumn();
+	}
+
+	// Crear botones para trabajar con la tabla
+	// comprueba de que existan para no crearlos otra vez
+
+	// Boton de reset
+	if(!document.getElementById("reset")){
+
+		reset = document.createElement("BUTTON");
+		reset.id = "reset";
+		reset.onclick= function() { reiniciarBoton() } ;
+
+		var t = document.createTextNode("Reset");       // Create a text node
+		reset.appendChild(t);                                // Append the text to <button>
+		document.getElementById("botones").appendChild(reset);
+
+	}
+
+	// Boton de aleatorio
+	if(!document.getElementById("aleatorio")){
+
+		aleatorio = document.createElement("BUTTON");
+		aleatorio.id = "aleatorio";
+		aleatorio.onclick= function(){ LabAleatorio()};
+
+		var t = document.createTextNode("Aleatorio");       // Create a text node
+		aleatorio.appendChild(t);                                // Append the text to <button>
+		document.getElementById("botones").appendChild(aleatorio);
+
+	}
+
+	// Boton de crear
+	if(!document.getElementById("crear")){
+
+		crear = document.createElement("BUTTON"); // create text node
+		crear.id = "crear";
+		crear.onclick= function() { comenzar()};
+
+
+		var t = document.createTextNode("Crear");       // Create a text node
+		crear.appendChild(t);                                // Append the text to <button>
+		document.getElementById("botones").appendChild(crear);
+
+	}
+
+	// CheckBox para crear techo y paredes
+	if(!document.getElementById("check")){
+
+		check = document.createElement("SELECT");
+		check.size=5;
+
+		var option = document.createElement("option");
+		option.text = "Crear Techo y Paredes";
+		check.add(option,check[0]);
+		var option1 = document.createElement("option");
+		option1.text = "Dibujar Cielo1";
+		check.add(option1,check[1]);
+		var option2 = document.createElement("option");
+		option2.text = "Dibujar Cielo2";
+		check.add(option2,check[2]);
+		var option3 = document.createElement("option");
+		option3.text = "Dibujar Cielo3";
+		check.add(option3,check[3]);
+		var option4 = document.createElement("option");
+		option4.text = "Dibujar Cielo4";
+		check.add(option4,check[4]);
+
+		var text = document.createTextNode(" Tipo de Laberinto: ");
+		document.getElementById("lista").appendChild(text);
+		check.id = "check";
+		document.getElementById("lista").appendChild(check);
+
+		check.selectedIndex="0";
+
+		check.onclick= function() { techoParedes()}
+	}
+
+
+	// Botones de Pinceles
+	tamboton = 25;
+	idB = (numCuadrados*numCuadrados)+1;
+	var tabla2 = document.getElementById('tabla2');
+	var row =  tabla2.insertRow(tabla2.rows.length);
+
+	var i;
+	Colores = ['#00FF00', '#ff0000', '#fff300', '#7f00ff','#ff00dd' ];
+
+	for (i = 0; i < 5; i++) {
+        createBoton(tabla2.rows[0].insertCell(tabla2.rows[0].cells.length), i, 'col');
+		document.getElementById(((numCuadrados*numCuadrados)+1)+i).style.backgroundColor=Colores[i];
+    }
+
+
+
+}
+
+// Crear fila de la tabla
+function appendRow() {
+    var tbl = document.getElementById('my_table'), // table reference
+        row = tbl.insertRow(tbl.rows.length),      // append table row
+        i;
+    // insert table cells to the new row
+    for (i = 0; i < tbl.rows[0].cells.length; i++) {
+        createCell(row.insertCell(i), i, 'row');
+    }
+}
+
+
+// Crear columna de la tabla
+function appendColumn() {
+    var tbl = document.getElementById('my_table'), // table reference
+        i;
+    // open loop for each row and append cell
+    for (i = 0; i < tbl.rows.length; i++) {
+        createCell(tbl.rows[i].insertCell(tbl.rows[i].cells.length), i, 'col');
+    }
+}
+
+// Crear boton en la celda
+function createCell(cell, text, style) {
+    var div = document.createElement('div'), // create DIV element
+        txt = document.createElement("BUTTON"); // create text node
+		txt.id = id;
+		txt.style.width=tamboton.toString()+'px';
+		txt.style.height=tamboton.toString()+'px';
+		txt.style.backgroundColor='#31B0D5'
+		txt.onclick= function() {cambiarBoton(txt.id)};
+		id = id +1;
+    div.appendChild(txt);                    // append text node to the DIV
+    div.setAttribute('class', style);        // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+
+}
+
+// Crear boton de edicion
+function createBoton(cell, text, style) {
+    var div = document.createElement('div'), // create DIV element
+        txt = document.createElement("BUTTON"); // create text node
+		txt.id = idB;
+		txt.style.width=tamboton.toString()+'px';
+		txt.style.height=tamboton.toString()+'px';
+		txt.style.backgroundColor='#31B0D5'
+		txt.onclick= function() {cambiarPincel(txt.id)};
+		idB = idB +1;
+    div.appendChild(txt);                    // append text node to the DIV
+    div.setAttribute('class', style);        // set DIV class attribute
+    div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+    cell.appendChild(div);                   // append DIV to the table cell
+
+}
+
+
+
+
+			/******************************* variables *******************/
+			var generadofichero= false;
+			var finalizado = true;	// detecta si ha finalizado o no (flecha escape).
+			var PosCamaraX = new Array();
+			var PosCamaraZ = new Array();
+			var PosCamaraAngulo = new Array();
+			var PosCamaraNum = 0;
+			var Cx;
+			var Cz;
+			var div;
+			var Laberinto;
+			var Objetos;
+			var inicial;
+			var final;
+			var xFinal;
+			var yFinal;
+			var fechaInicial= 0;
+			var fechaFinal;
+			var dibujaTechoParedes = true;
+			var fondo= 1;
+			var numCuadrados;
+			var soundRenderer;
+			var Render=new THREE.WebGLRenderer();								//El render
+
+			var Escenario=new THREE.Scene();									//El escenario
+			var Ancho=window.innerWidth;									//Ancho escena
+			var Alto=window.innerHeight;									//Alto
+
+			var Angulo = 40;
+			var Aspecto=Ancho/Alto;
+			var cerca=0.1;
+			var lejos=10000;
+			var angulo = 0;														//Angulo de la camara
+
+			//document.getElementById("angulocamara").innerHTML = angulo;			//Para ver el angulo
+			document.onkeydown = checkKey;										    //Para leer la teclas
+			document.onmousemove = moviendoraton;
+			var Camara=new THREE.PerspectiveCamera(Angulo,Aspecto,cerca,lejos); //camara
+
+			var listener = new THREE.AudioListener();
+			Camara.add(listener);
+			var listener2 = new THREE.AudioListener();
+			Camara.add(listener2);
+				var listener = new THREE.AudioListener();
+			Camara.add(listener);
+			var listener3 = new THREE.AudioListener();
+			Camara.add(listener3);
+
+			paso = 0.05;
+			paso2 = 0.02;
+			cambio = 0;
+			cambio2 = 0;
+			cuenta = 4;
+			cuenta2 = 1;
+
+			pulsado = 0;
+
+			Movimiento = new Array();
+
+			xraton = Ancho/2;
+			yraton = Alto/2;
+
+			var timer = setTimeout ("stops()", 2000); ;
+
+			var object;
+
+
+
+			/******************************* Materiales *******************/
+
+
+
+			var bmap = THREE.ImageUtils.loadTexture( "texturas/suelo.jpg" );
+			var smap = THREE.ImageUtils.loadTexture( "texturas/suelos.png" );
+
+			var bmap2 = THREE.ImageUtils.loadTexture( "texturas/pared.png" );
+			var smap2 = THREE.ImageUtils.loadTexture( "texturas/pareds.png" );
+
+			var bmap3 = THREE.ImageUtils.loadTexture( "texturas/techo.jpg" );
+			var smap3 = THREE.ImageUtils.loadTexture( "texturas/techos.png" );
+
+			var oldMaterial = new THREE.MeshPhongMaterial({
+						  color      :  bmap,
+						  emissive   :  new THREE.Color("rgb(0,0,0)"),
+						  specular   :  smap,
+						  shininess  :  1,
+						  bumpMap    :  bmap,
+						  map        :  smap,
+						  bumpScale  :  0.06,
+						});
+			//0xff9930
+			var oldMaterial2 = new THREE.MeshPhongMaterial({
+						  color      :  bmap2,
+						  emissive   :  new THREE.Color("rgb(0,0,0)"),
+						  specular   :  smap2,
+						  shininess  :  10,
+						  bumpMap    :  bmap2,
+						  map        :  smap2,
+						  bumpScale  :  0.01,
+						});
+
+			var oldMaterial3 = new THREE.MeshPhongMaterial({
+						  color      :  bmap3,
+						  emissive   :  new THREE.Color("rgb(0,0,0)"),
+						  specular   :  smap3,
+						  shininess  :  5,
+						  bumpMap    :  bmap3,
+						  map        :  smap3,
+						  bumpScale  :  1,
+						});
+
+			/******************************sonido*********************/
+
+
+			var sound1 = new THREE.Audio( listener );
+			sound1.load( 'sonidos/pasos.mp3' );
+			sound1.setRefDistance( 20 );
+
+			var sound2 = new THREE.Audio( listener2 );
+			sound2.load( 'sonidos/golpe.mp3' );
+			sound2.setRefDistance( 20 );
+
+			var sound3 = new THREE.Audio( listener2 );
+			sound3.load( 'sonidos/theme.mp3' );
+			sound3.setRefDistance( 20 );
+			sound3.volume =0;
+
+
+
+
+			/******************************* Luces *******************/
+
+			ambientLight = new THREE.AmbientLight(0xffffff);
+			Escenario.add(ambientLight);
+
+
+			flashlight = new THREE.SpotLight(0xEFAD62,2,25);
+			//flashlight.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xff9930 } ) ) );
+			flashlight.position.set(0,0,2);
+			Camara.add(flashlight);
+			flashlight.target = Camara;
+
+			/******************************Modelos********************/
+
+			var manager = new THREE.LoadingManager();
+				manager.onProgress = function ( item, loaded, total ) {
+
+					console.log( item, loaded, total );
+
+				};
+
+			var texture = new THREE.Texture();
+			var texture2 = new THREE.Texture();
+			var texture3 = new THREE.Texture();
+			var texture4 = new THREE.Texture();
+
+			var onProgress = function ( xhr ) {
+					if ( xhr.lengthComputable ) {
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round(percentComplete, 2) + '% downloaded' );
+					}
+				};
+
+			var onError = function ( xhr ) {};
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/vase.png', function ( image ) {
+
+					texture.image = image;
+					texture.needsUpdate = true;
+					texture.wrapS = THREE.RepeatWrapping;
+					texture.wrapT = THREE.RepeatWrapping;
+					texture.repeat.set( 1, 1 );
+
+			} );
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/plant.jpg', function ( image ) {
+
+					texture2.image = image;
+					texture2.needsUpdate = true;
+
+
+			} );
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/mesa.jpg', function ( image ) {
+
+					texture3.image = image;
+					texture3.needsUpdate = true;
+					texture3.wrapS = THREE.RepeatWrapping;
+					texture3.wrapT = THREE.RepeatWrapping;
+					texture3.repeat.set( 1, 1 );
+
+			} );
+
+
+			var loader = new THREE.ImageLoader( manager );
+				loader.load( 'modelos/taza.jpg', function ( image ) {
+
+					texture4.image = image;
+					texture4.needsUpdate = true;
+					texture4.wrapS = THREE.RepeatWrapping;
+					texture4.wrapT = THREE.RepeatWrapping;
+					texture4.repeat.set( 1, 1 );
+
+			} );
+
+
+
+
+
+
+
+
+
+
+
+			/*******************************Funciones *******************/
+
+			function degInRad(deg) {											//Funcion para convertir a radianes
+					return deg * Math.PI / 180;
+			}
+
+			function casillaFinal()
+			{
+				var filaFinal = (final-1)%numCuadrados;
+				var columnaFinal = Math.floor((final-1)/numCuadrados);
+
+
+				var x = (-(numCuadrados*10)/2) +((columnaFinal*10)+5);
+				var y = ((numCuadrados*10)/2) -((filaFinal*10)+5);
+
+				var sphere = new THREE.SphereGeometry( 0.5, 16, 8 );
+				light1 = new THREE.PointLight( 0xffffcc, 3, 7);
+				light1.add( new THREE.Mesh( sphere, new THREE.MeshBasicMaterial( { color: 0xffffcc } ) ) );
+				light1.position.set(x,1,y);
+				Escenario.add ( light1 );
+
+				var x = columnaFinal;
+				var y = filaFinal;
+
+				dibujarColumna(y,x,3);
+				dibujarFila(y,x,3);
+
+
+
+			}
+
+
+
+
+			function inicio(){
+
+				var fila = (inicial-1)%numCuadrados;
+				var columna = Math.floor((inicial-1)/numCuadrados);
+
+				var x = (-(numCuadrados*10)/2) +((columna*10)+5);
+				var y = ((numCuadrados*10)/2) -((fila*10)+5);
+
+
+				Camara.position.set(x,5.5,y);											//Se pone la camara en posicion
+
+
+				Render.setSize(Ancho,Alto);											//Tamaño del render
+				document.getElementById('render').appendChild(Render.domElement);	//Se agrega el render al documento html
+				Escenario.add(Camara);
+
+
+
+				sound3.play();
+				//crear_plano();														//Crea el suelo
+
+				crearLaberinto();													//Crea el laberinto
+
+				if(dibujaTechoParedes == true) crear_techo();						//Creamos el techo
+
+				dibujarCielo();
+
+				casillaFinal();
+
+				fechaInicial= new Date();
+
+
+				setInterval('guardarPosCamara()',200);
+
+			}
+
+			function dibujarCielo(){
+
+				var geometry = new THREE.SphereGeometry(4000,60, 40);
+				var uniforms = {
+				texture: { type: 't', value: THREE.ImageUtils.loadTexture('cielos/cielo' + fondo + '.png') }
+				};
+
+				var material = new THREE.ShaderMaterial( {
+				uniforms:       uniforms,
+				vertexShader:   document.getElementById('sky-vertex').textContent,
+				fragmentShader: document.getElementById('sky-fragment').textContent
+				});
+
+				skyBox = new THREE.Mesh(geometry, material);
+				skyBox.scale.set(-1, 1, 1);
+				skyBox.eulerOrder = 'XZY';
+				skyBox.renderDepth = 1000.0;
+				Escenario.add(skyBox);
+			}
+
+			function crearLaberinto()
+			{
+
+				MaxFila = numCuadrados;
+				MaxColumna = numCuadrados;
+
+				crearMovimiento();
+
+
+				Laberinto = etiquetado(MaxFila, MaxColumna, Laberinto);
+
+				for (i=0;i<MaxFila;i++) {
+
+					for (j=0;j<MaxColumna ;j++) {
+
+						switch(Laberinto[i][j])
+						{
+
+							case 1:
+								figura1(j,i)
+								break;
+							case 2:
+								figura2(j,i)
+								break;
+							case 3:
+
+								figura3(j,i);
+								break;
+							case 4:
+								figura4(j,i)
+								break;
+							case 5:
+
+								figura5(j,i);
+								break;
+
+							case 6:
+								figura6(j,i);
+								break;
+
+							case 7:
+								figura7(j,i);
+								break;
+							case 8:
+								figura8(j,i);
+								break;
+							case 9:
+
+								figura9(j,i);
+								break;
+
+							case 10:
+
+								figura10(j,i);
+								break;
+
+							case 11:
+
+								figura11(j,i);
+								break;
+
+							case 12:
+
+								figura12(j,i);
+								break;
+
+							case 13:
+
+								figura13(j,i);
+								break;
+
+							case 14:
+
+								figura14(j,i);
+								break;
+
+							case 15:
+								figura15(j,i);
+								break;
+
+
+						}
+						switch(Objetos[i][j])
+						{
+
+							case 1:
+								pintarObjeto1(j,i)
+								break;
+							case 2:
+								pintarObjeto2(j,i)
+								break;
+							case 3:
+								pintarObjeto3(j,i)
+								break;
+						}
+
+					}
+
+				}
+
+
+			}
+
+			function figura1(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x+1,z,90 );
+				cargar_modelo(x,z,0 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+				// Fila y Columna x
+				dibujarColumna(z,x,2);
+				dibujarFila(z,x,1);
+			}
+
+			function figura2(x,z)
+			{
+				debugger;
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x+1,z,90 );
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x,z+1,0 );
+				}
+
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+				dibujarColumna(z,x,2);
+				dibujarFila(z,x,-1);
+			}
+
+
+			function figura3(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x+1,z,90 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+				dibujarColumna(z,x,2);
+			}
+
+			function figura4(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,90 );
+				cargar_modelo(x,z,0 );
+				cargar_modelo(x,z+1,0 );}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+				dibujarColumna(z,x,-1);
+				dibujarFila(z,x,2);
+			}
+
+			function figura5(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				cargar_modelo(x,z,90 );}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarColumna(z,x,-1);
+				dibujarFila(z,x,1);
+			}
+
+			function figura6(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z+1,0);
+				cargar_modelo(x,z,90 );}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarColumna(z,x,-1);
+				dibujarFila(z,x,-1);
+
+			}
+
+			function figura7(x,z)
+			{
+
+				if(dibujaTechoParedes == true) cargar_modelo(x,z,90 );
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarColumna(z,x,-1);
+
+
+			}
+
+			function figura8(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x+1,z,90 );
+				cargar_modelo(x,z,0 );
+				cargar_modelo(x,z+1,0 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				// Fila y Columna x
+				dibujarColumna(z,x,1);
+				dibujarFila(z,x,2);
+			}
+
+			function figura9(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				cargar_modelo(x+1,z+1,-90 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarColumna(z,x,1);
+				dibujarFila(z,x,1);
+
+			}
+
+			function figura10(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z+1,0);
+				cargar_modelo(x+1,z+1,-90 );
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarColumna(z,x,1);
+				dibujarFila(z,x,-1);
+
+			}
+
+			function figura11(x,z)
+			{
+				if(dibujaTechoParedes == true)cargar_modelo(x+1,z,90 );
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarColumna(z,x,1);
+			}
+
+			function figura12(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				cargar_modelo(x,z+1,0);
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarFila(z,x,2);
+			}
+
+			function figura13(x,z)
+			{
+				if(dibujaTechoParedes == true){
+				cargar_modelo(x,z,0);
+				}
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarFila(z,x,1);
+
+			}
+
+			function figura14(x,z)
+			{
+
+				if(dibujaTechoParedes == true) cargar_modelo(x,z+1,0);
+
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+				dibujarFila(z,x,-1);
+
+			}
+
+			function figura15(x,z)
+			{
+				var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial );
+					oldWall.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					oldWall.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					oldWall.rotation.x = degInRad(-90);
+					Escenario.add(oldWall);
+
+			}
+
+			function pintarObjeto1(x,z){
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/mesa.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture3 ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					object.position.y = 0;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.0150,0.0200,0.0150);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/taza.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture4 ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) + 0.5;
+					object.position.y = 4.3;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.0100,0.0100,0.0100);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+				var cristal = new THREE.MeshPhongMaterial( { color: 0xCCFFE5, transparent: true,specular: 0xffffff,opacity:0.7 } )
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/Botella.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material = cristal ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) ;
+					object.position.y = 4.05;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5)+1;
+					object.scale.set(0.0025,0.0025,0.0025);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			}
+
+			function pintarObjeto2(x,z){
+
+				var colorSilla = new THREE.MeshPhongMaterial( { color: 0x000000 } )
+
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/Silla.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material = colorSilla ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) -2;
+					object.position.y = 0.1;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5)+12;
+					object.scale.set(0.0125,0.0125,0.0125);
+					object.rotation.y = degInRad(70);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			}
+
+			function pintarObjeto3(x,z){
+				debugger;
+				var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/vase.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5);
+					object.position.y = 0;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.0140,0.0140,0.0140);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			var loader = new THREE.OBJLoader( manager );
+				loader.load( 'modelos/plant.obj', function ( object ) {
+
+					object.traverse( function ( child ) {
+
+						if ( child instanceof THREE.Mesh ) {
+
+							child.material.map = texture2 ;
+
+
+						}
+
+					} );
+                    object.position.x = (-(numCuadrados*10)/2) + ((x*10)+5) +0.1;
+					object.position.y = 3.6;
+					object.position.z = ((numCuadrados*10)/2) - ((z*10)+5);
+					object.scale.set(0.004,0.004,0.004);
+					Escenario.add( object );
+
+				},onProgress, onError);
+
+			}
+
+
+			function cargar_modelo(x, z, r){
+
+					var geom = new THREE.Geometry();
+					var v0 = new THREE.Vector3(0.0,0.0,0.0);
+					var v1 = new THREE.Vector3(10.0,0.0,0.0);
+					var v2 = new THREE.Vector3(10.0,10.0,0.0);
+					var v3 = new THREE.Vector3(0.0,10.0, 0.0);
+
+					geom.vertices.push(v0);
+					geom.vertices.push(v1);
+					geom.vertices.push(v2);
+					geom.vertices.push(v3);
+
+					var uvs =[];
+					uvs.push(new THREE.Vector2(0.0,0.0));
+					uvs.push(new THREE.Vector2(1.0,0.0));
+					uvs.push(new THREE.Vector2(1.0,1.0));
+					uvs.push(new THREE.Vector2(0.0,1.0));
+
+
+					geom.faces.push( new THREE.Face3(0, 1, 2) );
+					geom.faceVertexUvs[0].push([uvs[0],uvs[1],uvs[2]]);
+					geom.faces.push( new THREE.Face3(0, 2, 3) );
+					geom.faceVertexUvs[0].push([uvs[0],uvs[2],uvs[3]]);
+
+					geom.faces.push( new THREE.Face3(2, 1, 0) );
+					geom.faceVertexUvs[0].push([uvs[2],uvs[1],uvs[0]]);
+					geom.faces.push( new THREE.Face3(3, 2, 0) );
+					geom.faceVertexUvs[0].push([uvs[3],uvs[2],uvs[0]]);
+
+					geom.computeFaceNormals();
+
+					var cubo = new THREE.Mesh(geom, oldMaterial2);
+					r = r * Math.PI/ 180;
+					cubo.rotation.y=r;
+
+					cubo.position.x = (-(numCuadrados*10)/2) + (x*10);
+					cubo.position.z = ((numCuadrados*10)/2) - (z*10);
+
+					Escenario.add( cubo );
+
+			}
+
+			function crear_plano(){
+
+				for (i=0;i<numCuadrados;i++) {
+					for (j=0;j<numCuadrados ;j++){
+						var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial2 );
+						oldWall.rotation.x = degInRad(-90);
+						oldWall.position.x = (-(numCuadrados*10)/2) +((j*10)+5);
+						oldWall.position.z = ((numCuadrados*10)/2) -((i*10)+5);
+						Escenario.add(oldWall);
+					}
+				}
+			}
+
+			function crear_techo(){
+
+				for (i=0;i<numCuadrados;i++) {
+					for (j=0;j<numCuadrados ;j++){
+						var oldWall = new THREE.Mesh( new THREE.PlaneBufferGeometry(10,10,1,1), oldMaterial3 );
+						oldWall.position.y = 10;
+						oldWall.rotation.x = degInRad(90);
+						oldWall.position.x = (-(numCuadrados*10)/2) +((j*10)+5);
+						oldWall.position.z = ((numCuadrados*10)/2) -((i*10)+5);
+						Escenario.add(oldWall);
+					}
+				}
+			}
+
+			function animacion(){
+					requestAnimationFrame(animacion);
+					render_modelo();
+
+			}
+
+			function render_modelo(){
+
+					Render.setScissor(0,0,Ancho,Alto);
+					Render.enableScissorTest(true);
+					Render.clear();
+					Render.render(Escenario,Camara);
+					efectoMeta();
+					if(xraton==Ancho-1 || xraton==0 ){
+					RotandoConRaton(xraton,yraton);
+					}
+
+			}
+
+			function pasos(){
+				if( cambio == 0 ){
+						cuenta = cuenta + paso;
+						Camara.position.y = Camara.position.y + paso;
+						if(cuenta > 4.2) cambio = 1;
+				}else{
+						cuenta = cuenta - paso*2;
+						Camara.position.y = Camara.position.y - paso*2;
+						if(cuenta < 4) cambio = 0;
+				}
+				window.clearTimeout(timer);
+				sound1.play();
+				timer = setTimeout ("stops()", 100);
+			}
+
+			function efectoMeta(){
+				if( cambio2 == 0 ){
+						cuenta2 = cuenta2 + paso2;
+						light1.position.y = light1.position.y + paso2;
+						if(cuenta2 > 7) cambio2 = 1;
+				}else{
+						cuenta2 = cuenta2 - paso2*2;
+						light1.position.y = light1.position.y - paso2*2;
+						if(cuenta2 < 1) cambio2 = 0;
+				}
+			}
+
+			/**************************llamado a las funciones ******************/
+
+			function stops(){
+			sound1.stop();
+			}
+
+			function checkKey(e) {
+
+				e = e || window.event;
+
+				// Tecla ESC
+				if(e.keyCode == '27')
+				{
+					finalizado = false;
+					finalizarJuego();
+
+				}
+
+				if (e.keyCode == '87') {
+
+
+					xM = ((numCuadrados*10)/2)+ Math.round(Camara.position.x);
+					yM = ((numCuadrados*10)/2) - Math.round(Camara.position.z);
+
+					//document.getElementById("angulocamara").innerHTML = "( "+Math.round(Camara.position.x)+" , "+Math.round(Camara.position.z)+")"+" posicion en la matriz "+xM+" " +yM+" " +Movimiento[xM][yM];
+
+					xDestino = ((numCuadrados*10)/2)+ Math.round(Camara.position.x -  (Math.sin(angulo)/2));
+					yDestino = ((numCuadrados*10)/2) - Math.round(Camara.position.z - (Math.cos(angulo)/2));
+
+					if(puedoMoverme(xDestino,yDestino))
+					{
+						Camara.position.x = Camara.position.x - (Math.sin(angulo)/2);
+						Camara.position.z = Camara.position.z - (Math.cos(angulo)/2);
+						//document.getElementById("angulocamara").innerHTML = "( "+Math.round(Camara.position.x)+" , "+Math.round(Camara.position.z)+")"+" posicion en la matriz "+xDestino+" " +yDestino+" " +Movimiento[xDestino][yDestino];
+					}
+					else
+					{
+					//document.getElementById("angulocamara").innerHTML = "( "+Math.round(Camara.position.x)+" , "+Math.round(Camara.position.z)+")"+" posicion en la matriz "+xM+" " +yM+" " +Movimiento[xM][yM];
+					sound1.stop();
+					sound2.play();
+					}
+
+					pasos();
+					Camara.updateProjectionMatrix();
+
+					}else if (e.keyCode == '83') {
+
+
+
+					xM = ((numCuadrados*10)/2) + Math.round(Camara.position.x);
+					yM = ((numCuadrados*10)/2) - Math.round(Camara.position.z);
+
+					//document.getElementById("angulocamara").innerHTML = "( "+Math.round(Camara.position.x)+" , "+Math.round(Camara.position.z)+")"+" posicion en la matriz "+xM+" " +yM+" " +Movimiento[xM][yM];
+
+					xDestino = ((numCuadrados*10)/2)+ Math.round(Camara.position.x + (Math.sin(angulo)/2));
+					yDestino = ((numCuadrados*10)/2) - Math.round(Camara.position.z + (Math.cos(angulo)/2));
+
+					if(puedoMoverme(xDestino,yDestino))
+					{
+						Camara.position.x = Camara.position.x + (Math.sin(angulo)/2);
+						Camara.position.z = Camara.position.z + (Math.cos(angulo)/2);
+						//document.getElementById("angulocamara").innerHTML = "( "+Math.round(Camara.position.x)+" , "+Math.round(Camara.position.z)+")"+" posicion en la matriz "+xDestino+" " +yDestino+" " +Movimiento[xDestino][yDestino];
+					}
+					else
+					{
+					//document.getElementById("angulocamara").innerHTML = "( "+Math.round(Camara.position.x)+" , "+Math.round(Camara.position.z)+")"+" posicion en la matriz "+xM+" " +yM+" " +Movimiento[xM][yM];
+					sound1.stop();
+					sound2.play();
+					}
+
+					pasos();
+					Camara.updateProjectionMatrix();
+
+				}
+				else if (e.keyCode == '65') {
+
+				   if(angulo >= degInRad(360) ) angulo = 0;
+
+					   Camara.rotation.y = Camara.rotation.y + degInRad(3);
+					   Camara.updateProjectionMatrix();
+					   angulo += degInRad(3) ;
+
+					  //document.getElementById("angulocamara").innerHTML = angulo;
+
+
+
+				}
+				else if (e.keyCode == '68') {
+
+				   if(angulo <= degInRad(-360) ) angulo = 0;
+
+					   Camara.rotation.y = Camara.rotation.y - degInRad(3);
+					   Camara.updateProjectionMatrix();
+					   angulo -= degInRad(3) ;
+					   //document.getElementById("angulocamara").innerHTML = angulo;
+
+
+
+
+				}
+
+			}
+
+			/********************* Colisiones ***********************/
+
+			function dibujarColumna(Fila,Columna,n){
+				var i;
+				if(n==-1)	// Dibuja la de la izquierda
+				{
+					for (i= Fila*10; i< (Fila*10)+10; i++)
+					{
+							Movimiento[i][Columna*10] = 0;
+					}
+				}
+				else if (n==1) // Dibuja la de la derecha
+				{
+
+					for (i= Fila*10; i< (Fila*10)+10; i++)
+					{
+							Movimiento[i][(Columna*10)+9] = 0;
+					}
+
+				}
+				else if (n== 2 || n==3)
+				{
+					for (i= Fila*10; i< (Fila*10)+10; i++)
+					{
+							if(n==2) Movimiento[i][Columna*10] = 0;
+							else Movimiento[i][Columna*10] = 2;
+					}
+
+					for (i= Fila*10; i< (Fila*10)+10; i++)
+					{
+							if(n==2) Movimiento[i][(Columna*10)+9] = 0;
+							else Movimiento[i][(Columna*10)+9] = 2;
+					}
+
+				}
+
+			}
+
+			function dibujarFila(Fila,Columna,n){
+				var j;
+
+				if(n==-1)	// Dibuja la de abajo
+				{
+					for (j= Columna*10;j< (Columna*10)+10;j++)
+					{
+							Movimiento[(Fila*10)+9][j] = 0;
+					}
+				}
+				else if (n==1) // Dibuja la de arriba
+				{
+
+					for (j= Columna*10; j< (Columna*10)+10; j++)
+					{
+							Movimiento[Fila*10][j] = 0;
+					}
+
+				}
+				else if(n== 2 || n==3)
+				{
+					for (j= Columna*10;j< (Columna*10)+10; j++)
+					{
+							if(n==2) Movimiento[(Fila*10)+9][j] = 0;
+							else Movimiento[(Fila*10)+9][j] = 2;
+					}
+
+					for (j= Columna*10; j< (Columna*10)+10; j++)
+					{
+							if(n==2) Movimiento[Fila*10][j] = 0;
+							else Movimiento[Fila*10][j] = 2;
+					}
+
+				}
+
+			}
+
+
+
+			function puedoMoverme(xDestino, yDestino)
+			{
+				if(xDestino >0 && xDestino<(numCuadrados*10) && yDestino>0 && yDestino<(numCuadrados*10) )
+				{
+					if(Movimiento[yDestino][xDestino]==1) return true;
+					else if(Movimiento[yDestino][xDestino]==2) finalizarJuego();
+					else return false;
+				}
+				else return false;
+
+			}
+
+			function finalizarJuego(){
+
+
+				// Muestra de tiempos
+				var ntiempos = 1;
+
+				if(finalizado){
+					if(document.getElementById("render"))eliminarElemento("render");
+					document.getElementById("resultados").style.display="block";
+					document.getElementById("res1").style.display="block";
+					document.getElementById("res1").innerHTML="¡Enhorabuena! Has finalizado el juego correctamente";
+
+
+					if(localStorage["ntiempos"]==null){
+						localStorage["ntiempos"] = ntiempos;
+						var tiempo = 'tiempo' + ntiempos;
+						fechaFinal = new Date();
+						tp = (fechaFinal.getTime()-fechaInicial.getTime())/1000;
+						localStorage[tiempo] = tp;
+						minutos = Math.floor(tp/60);
+						segundos = tp- (60*minutos);
+
+						document.getElementById("res4").style.display="block";
+						document.getElementById("res4").innerHTML="Tu tiempo ha sido: "+minutos+" minutos y "+segundos+".";
+
+						document.getElementById("res3").style.display="block";
+						document.getElementById("res3").innerHTML="<b>Ranking de mejores tiempos</b>"+"<br />"+localStorage[tiempo];
+
+					}
+					else {
+						stiempos = [];
+						ntiempos = localStorage["ntiempos"];
+
+							ntiempos = parseInt(ntiempos) + 1;
+							localStorage["ntiempos"] = ntiempos;
+							st = 'tiempo' + (ntiempos);
+							fechaFinal = new Date();
+							tp = (fechaFinal.getTime()-fechaInicial.getTime())/1000;
+							localStorage[st] = tp;
+							for(i=1;i<=ntiempos;i++){
+								st = 'tiempo' + i;
+								stiempos.push(parseFloat(localStorage[st]));
+							}
+							stiempos.sort(function(a, b){return a-b});
+							minutos = Math.floor(tp/60);
+							segundos = tp- (60*minutos);
+
+							document.getElementById("res4").style.display="block";
+							document.getElementById("res4").innerHTML="Tu tiempo ha sido: "+minutos+" minutos y "+segundos+".";
+
+							document.getElementById("res3").style.display="block";
+
+							var print = "<b>Ranking</b> <br />";
+
+							for(i=0;i<=3;i++){
+								t = stiempos[i];
+								if(stiempos[i] == null) t = "";
+								print = print + t + "<br />";
+							}
+							document.getElementById("res3").innerHTML=print;
+
+					}
+
+
+				}
+				else {
+					if(document.getElementById("render"))eliminarElemento("render");
+					document.getElementById("resultados").style.display="block";
+					document.getElementById("res2").style.display="block";
+					document.getElementById("res2").innerHTML="¡MAAL! Has finalizado el juego sin terminar";
+
+					fechaFinal = new Date();
+					tp = (fechaFinal.getTime()-fechaInicial.getTime())/1000;
+
+					minutos = Math.floor(tp/60);
+					segundos = tp- (60*minutos);
+
+					document.getElementById("res4").style.display="block";
+					document.getElementById("res4").innerHTML="Tu tiempo ha sido: "+minutos+" minutos y "+segundos+".";
+				}
+
+
+
+
+
+
+
+				// Exportacion de informacion del experimento
+
+
+				var blob = new Blob(["dibujaTechoParedes="+dibujaTechoParedes+";"+"fondo = "+fondo+";"+"final = "+final+";"+"tiempo = "+tp+";"+"finalizado = "+finalizado+";"+PasarLaberinto()+PasarObjeto()+"numCuadrados = "+numCuadrados+";"+PasarPosCamara()], {type: "text/js;"});
+				if(!generadofichero)
+				{
+					saveAs(blob, "prueba.js");
+					generadofichero= true;
+				}
+
+				document.getElementById("reintentar").style.display="block";
+
+			}
+
+			function PasarLaberinto()
+			{
+				var lab = "Laberinto = new Array();"
+
+				for( i= 0; i<numCuadrados; i++)
+				{
+					lab+= "Laberinto["+i+"] = new Array();";
+					for (j = 0; j<numCuadrados;j++)
+					{
+
+						lab += "Laberinto["+i+"]["+j+"] = "+Laberinto[i][j]+";";
+					}
+				}
+
+				return lab;
+
+			}
+
+			function PasarObjeto()
+			{
+				var obj = "Objetos = new Array();"
+
+				for( i= 0; i<numCuadrados; i++)
+				{
+					obj+= "Objetos["+i+"] = new Array();";
+					for (j = 0; j<numCuadrados;j++)
+					{
+
+						obj += "Objetos["+i+"]["+j+"] = "+Objetos[i][j]+";";
+					}
+				}
+
+				return obj;
+			}
+
+			function guardarPosCamara(){
+
+				PosCamaraX[PosCamaraNum] = Camara.position.x;
+				PosCamaraZ[PosCamaraNum] = Camara.position.z;
+				PosCamaraAngulo[PosCamaraNum] = angulo;
+
+				PosCamaraNum++;
+
+			}
+
+			function PasarPosCamara(){
+
+				var PosCamara = "CamaraX = new Array();CamaraZ = new Array();CamaraAngulo = new Array();CamaraNum ="+PosCamaraNum+";";
+
+				var Posiciones = "";
+
+				 for (i = 0; i<PosCamaraNum; i++)
+				{
+					Posiciones = Posiciones+ " CamaraX["+i+"] = "+PosCamaraX[i]+";CamaraZ["+i+"] = "+PosCamaraZ[i]+";CamaraAngulo["+i+"] = "+PosCamaraAngulo[i]+";";
+				}
+
+				var PosCamara = PosCamara +Posiciones;
+
+				return PosCamara;
+
+			}
+
+
+			function crearMovimiento(){
+
+					// Inicializacion a 0 del array del Movimiento
+				for (fila=0;fila<(MaxFila*10);fila++) {
+
+					Movimiento[fila] = new Array();
+
+					for (columna=0;columna<(MaxColumna*10);columna++) {
+
+						if( fila == 0 || fila == ((MaxFila*10)-1) ){
+
+							Movimiento[fila][columna]=0;
+						}
+						else if( columna == 0 || columna == ((MaxColumna*10)-1) ){
+
+							Movimiento[fila][columna]=0;
+
+						}
+						else {
+							Movimiento[fila][columna]=1;
+						}
+
+					}
+
+				}
+
+			}
+
+			function moviendoraton(event){
+
+				xraton =event.clientX;
+				zraton =event.clientZ;
+
+				//document.getElementById("x").value = xraton;
+				//document.getElementById("y").value = yraton;
+
+				RotandoConRaton(xraton,yraton);
+
+
+
+			}
+
+
+
+
+
+			function RotandoConRaton(x,y){
+
+
+					if(x < Ancho/7){
+						if(angulo >= degInRad(360) ) angulo = 0;
+
+					   Camara.rotation.y = Camara.rotation.y + degInRad(0.95);
+					   Camara.updateProjectionMatrix();
+					   angulo += degInRad(0.95) ;
+					}else if(x > (Ancho/7)*6 ){
+						if(angulo <= degInRad(-360) ) angulo = 0;
+
+					   Camara.rotation.y = Camara.rotation.y - degInRad(0.95);
+					   Camara.updateProjectionMatrix();
+					   angulo -= degInRad(0.95) ;
+					}
+					else if(x>(Ancho/7) && x<(Ancho/7)*2)
+					{
+						if(angulo >= degInRad(360) ) angulo = 0;
+						Camara.rotation.y = Camara.rotation.y + degInRad(0.85);
+					   Camara.updateProjectionMatrix();
+					   angulo += degInRad(0.85) ;
+					}
+					else if(x>(Ancho/7)*5 && x<(Ancho/7)*6)
+					{
+						if(angulo <= degInRad(-360) ) angulo = 0;
+
+					   Camara.rotation.y = Camara.rotation.y - degInRad(0.85);
+					   Camara.updateProjectionMatrix();
+					   angulo -= degInRad(0.85) ;
+					}
+					else if(x>(Ancho/7)*2 && x<(Ancho/7)*3)
+					{
+						if(angulo >= degInRad(360) ) angulo = 0;
+						Camara.rotation.y = Camara.rotation.y + degInRad(0.45);
+					   Camara.updateProjectionMatrix();
+					   angulo += degInRad(0.45) ;
+					}
+					else if(x>(Ancho/7)*4 && x<(Ancho/7)*5)
+					{
+						if(angulo <= degInRad(-360) ) angulo = 0;
+
+					   Camara.rotation.y = Camara.rotation.y - degInRad(0.45);
+					   Camara.updateProjectionMatrix();
+					   angulo -= degInRad(0.45) ;
+					}
+
+
+			}
+
+
+
+	</script>
+
+
+
+
+</html>

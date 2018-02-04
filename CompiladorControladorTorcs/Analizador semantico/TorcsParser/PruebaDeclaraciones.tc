@@ -1,0 +1,63 @@
+inner double dGlobal <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+#Declaraciones duplicadas
+######################################
+perception prueba()
+{
+	int a;
+	int a;
+	double b;
+	boolean b;
+	true;
+}
+action prueba()
+{
+	int a;
+	int a;
+	double b;
+	boolean b;
+}
+
+######################################
+#Declaraciones duplicadas con inner(Solo error action)
+######################################
+perception prueba2()
+{
+	int dGlobal;
+	int iGlobal;
+	double bGlobal;
+	true;
+}
+action prueba2()
+{
+	int dGlobal;
+	int iGlobal;
+	double bGlobal;
+	boolean bGlobal;
+}
+
+######################################
+#Declaraciones duplicadas con argumento
+######################################
+perception prueba3(int a,double b,boolean c)
+{
+	int c;
+	double c;
+	double a;
+	boolean a;
+	true;
+}
+action prueba3(int a,double b,boolean c)
+{
+	int c;
+	double c;
+	double a;
+	boolean a;
+}
+
+######################################
+rules {  
+}

@@ -1,0 +1,59 @@
+inner double dGlobal <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+#Llamadas a perception y action desde ellos.
+######################################
+
+perception method1()
+{
+	true;
+}
+
+perception method1(int a, double b)
+{
+	true;
+}
+
+action method2()
+{
+}
+
+perception prueba()
+{
+	boolean a <- method1();	
+	int b <- method1(); # ERROR. No hay concordancia de tipos
+	int c <- method2();
+	boolean d <- method1(2,2);
+	boolean e <- method1(2); # ERROR. Falta un parametro
+	boolean f <- method1(2.0,2); # ERROR. Los tipos de los parametros no coinciden
+	boolean g <- method3();	# ERROR. Metodo desconocido
+	true;
+}
+
+action prueba2()
+{
+	boolean a <- method1();
+	int b <- method1(); # ERROR. No hay concordancia de tipos
+	int c <- method2();
+	boolean d <- method1(2,2);	
+	boolean e <- method1(2); # ERROR. Falta un parametro
+	boolean f <- method1(2.0,2); # ERROR. Los tipos de los parametros no coinciden
+	boolean g <- method3();	# ERROR. Metodo desconocido
+}
+
+perception prueba3(int a, double b, boolean c)
+{
+	true;
+}
+
+action prueba4()
+{
+
+	boolean b <- prueba3(2,3,prueba3(2,4,prueba3(1,2,true)));
+}
+
+######################################
+rules {  
+}

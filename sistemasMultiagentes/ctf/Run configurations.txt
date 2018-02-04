@@ -1,0 +1,2 @@
+Main class: jade.Boot
+Program arguments: -container -host localhost -agents isaacCreador:Agentes.AgenteCreador

@@ -1,0 +1,131 @@
+#####################################################
+#
+# Ejemplo de especificación de un controlador
+#
+#####################################################
+
+inner int stuck <- 0;
+
+perception estoyGirado()
+{
+  if(angle > 0 & angle > 0.523598775) true;
+  if(angle < 0 & angle < -0.523598775) true;
+  false;
+}
+
+action incrStuck()
+{
+  stuck <- stuck + 1;
+}
+
+action resetStuck()
+{
+  stuck <- 0;
+}
+
+action salirStuck()
+{
+  double steer <- - (angle / 0.785398);
+  int gr <- -1; 
+
+  #if car is pointing in the correct direction revert gear and steer  
+  if (angle*position > 0)
+        {
+            gr <- 1;
+            steer <- -steer;
+        }
+
+  gear <- gr;
+  steering <- steer;
+  accelerate <- 0.3;
+  brake <- 0;
+}
+
+action setAccelerateAndBrake()
+{
+  double s90 <- sensor9/90.0;
+  if (s90 > 0) {
+    accelerate <- s90;
+    brake <- 0.0;
+  } else {
+    accelerate <- 0.0;
+    brake <- -s90;
+  }
+}
+ 
+action setGear()
+{
+  int gr;
+
+  if(gear < 1) gr <- 1;
+  if(gear = 1) 
+  {
+    if(rpm > 6000) gr <- 2;
+    else gr <- 1;
+  }
+  if(gear = 2)
+  {
+    if(rpm > 7000) gr <- 3;
+    else if(rpm < 2500) gr <- 1;
+    else gr <- 2;
+  }
+  if(gear = 3)
+  {
+    if(rpm > 7000) gr <- 4;
+    else if(rpm < 3000) gr <- 2;
+    else gr <- 3;
+  }
+  if(gear = 4)
+  {
+    if(rpm > 7500) gr <- 5;
+    else if(rpm < 3000) gr <- 3;
+    else gr <- 4;
+  }
+  if(gear = 5)
+  {
+    if(rpm > 8000) gr <- 6;
+    else if(rpm < 3500) gr <- 4;
+    else gr <- 5;
+  }
+  if(gear = 6)
+  {
+    if(rpm < 3500) gr <- 5;
+    else gr <- 6;
+  }
+
+  gear <- gr;
+}
+
+action setSteering()
+{
+  int maxIndex <- 0;
+  double maxSensor <- sensor0;
+
+  if(sensor1 > maxSensor) { maxIndex <- 1; maxSensor <- sensor1; }
+  if(sensor2 > maxSensor) { maxIndex <- 2; maxSensor <- sensor2; }
+  if(sensor3 > maxSensor) { maxIndex <- 3; maxSensor <- sensor3; }
+  if(sensor4 > maxSensor) { maxIndex <- 4; maxSensor <- sensor4; }
+  if(sensor5 > maxSensor) { maxIndex <- 5; maxSensor <- sensor5; }
+  if(sensor6 > maxSensor) { maxIndex <- 6; maxSensor <- sensor6; }
+  if(sensor7 > maxSensor) { maxIndex <- 7; maxSensor <- sensor7; }
+  if(sensor8 > maxSensor) { maxIndex <- 8; maxSensor <- sensor8; }
+  if(sensor9 > maxSensor) { maxIndex <- 9; maxSensor <- sensor9; }
+  if(sensor10 > maxSensor) { maxIndex <- 10; maxSensor <- sensor10; }
+  if(sensor11 > maxSensor) { maxIndex <- 11; maxSensor <- sensor11; }
+  if(sensor12 > maxSensor) { maxIndex <- 12; maxSensor <- sensor12; }
+  if(sensor13 > maxSensor) { maxIndex <- 13; maxSensor <- sensor13; }
+  if(sensor14 > maxSensor) { maxIndex <- 14; maxSensor <- sensor14; }
+  if(sensor15 > maxSensor) { maxIndex <- 15; maxSensor <- sensor15; }
+  if(sensor16 > maxSensor) { maxIndex <- 16; maxSensor <- sensor16; }
+  if(sensor17 > maxSensor) { maxIndex <- 17; maxSensor <- sensor17; }
+  if(sensor18 > maxSensor) { maxIndex <- 18; maxSensor <- sensor18; }
+
+  steering <- (maxIndex - 9.0) / 9.0;             
+}
+
+rules {
+ ( estoyGirado() | sensor9 < 0 ) -> incrStuck();
+ ( !estoyGirado() & sensor9 >= 0 ) -> resetStuck();
+ ( stuck > 25 ) -> salirStuck();
+ ( stuck <= 25 ) -> setAccelerateAndBrake(), setGear(), setSteering();
+}

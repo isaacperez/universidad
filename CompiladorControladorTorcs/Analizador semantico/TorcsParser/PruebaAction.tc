@@ -1,0 +1,34 @@
+inner double dGloba <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+#Deteccion de action duplicados
+######################################
+action prueba()
+{
+}
+action prueba()
+{
+}
+
+######################################
+#Sobrecarga de action
+######################################
+action prueba(int a)
+{
+}
+action prueba(double a)
+{
+}
+
+######################################
+#Deteccion de argumentos duplicados
+######################################
+action prueba(boolean a,int a)
+{
+}
+
+######################################
+rules {  
+}

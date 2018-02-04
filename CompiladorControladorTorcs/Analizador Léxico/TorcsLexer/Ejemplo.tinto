@@ -1,0 +1,29 @@
+
+//----------------------------------------------------------//
+// Ejemplo de librería descrita en lenguaje Tinto           //
+//----------------------------------------------------------//
+ 
+import Math;
+
+library Ejemplo {
+
+  /**
+   * Función que calcula el máximo común divisor entre dos número enteros
+   */
+  int MaximoComunDivisor(int a, int b) {
+
+    int mcd = Math.min(a,b);
+
+    while(mcd>0) {
+
+       if( a%mcd == 0 && b%mcd == 0) return mcd;
+
+       mcd = mcd - 1;
+
+    }
+
+    return 1;
+
+  }
+
+}

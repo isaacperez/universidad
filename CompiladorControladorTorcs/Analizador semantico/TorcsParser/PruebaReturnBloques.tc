@@ -1,0 +1,131 @@
+inner double dGlobal <- 2;
+inner int iGlobal <- 0;
+inner boolean bGlobal <- true;
+
+######################################
+#Codigo inalcanzable
+######################################
+perception prueba()
+{
+	if(true)
+	{
+		true;
+	}
+	else
+	{
+		false;
+	}
+	
+	int a;
+	a <- 2;
+		
+}
+
+perception prueba2()
+{
+	if(true)
+	{
+		true;
+		int j;
+		j<-3;
+	}
+	else
+	{
+		false;
+	}
+		
+}
+
+######################################
+#Falta return
+######################################
+perception prueba3()
+{
+	if(true)
+	{
+		{
+			if(true)
+			{
+				true;
+			}
+			# Falta return aqui
+		}
+		
+	}
+	else
+	{
+		false;
+	}
+		
+}
+
+perception prueba4()
+{
+	if(true)
+	{
+		# Falta return aqui
+	}
+	else
+	{
+		false;
+	}
+		
+}
+
+######################################
+#Errores de ambito en bloques
+######################################
+perception prueba5()
+{
+	int a;
+	if(true)
+	{
+		int b;
+		int a; # Variable duplicada.
+		{
+			if(true)
+			{
+				
+			}
+			
+		}
+		
+	}
+	else
+	{
+		
+	}
+	b <- 5;	# b no existe ya.
+	
+	int b; # Permite crear b despues de que sea eliminada.
+	true;	
+}
+
+action prueba()
+{
+	int a;
+	if(true)
+	{
+		int b;
+		int a; # Variable duplicada.
+		{
+			if(true)
+			{
+				
+			}
+			
+		}
+		
+	}
+	else
+	{
+		
+	}
+	b <- 5;	# b no existe ya.
+	
+	int b; # Permite crear b despues de que sea eliminada.		
+}
+
+######################################
+rules {  
+}

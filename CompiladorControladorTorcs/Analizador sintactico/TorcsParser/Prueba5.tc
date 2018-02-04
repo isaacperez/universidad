@@ -1,0 +1,28 @@
+#####################################################
+#
+# Ejemplo de especificación de un controlador
+#
+#####################################################
+
+
+inner int stuck <- 0;  #Falta inner
+
+perception estoyGirado()
+{
+	int a;
+  if(angle > 0 & angle > 0.523598775) true;
+  if(angle < 0 & angle < -0.523598775) true;
+  false;
+}
+
+action incrStuck()
+{
+  stuck <- stuck + 1;
+}
+
+rules {
+ ( estoyGirado() | sensor9 < 0 ) -> incrStuck();
+ ( !estoyGirado() & sensor9 >= 0 ) -> resetStuck();
+ ( stuck > 25 )  salirStuck();	# Falta ->
+ ( stuck <= 25 ) -> setAccelerateAndBrake(), setGear(), setSteering();
+}
